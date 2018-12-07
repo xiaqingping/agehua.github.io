@@ -94,6 +94,28 @@
 
     
     
+    
+    
+  <url>
+    <loc>http://agehua.github.io/2018/06/26/Toastmaster-md-introduction/</loc>
+    <lastmod>2018-08-23T13:50:26.122Z</lastmod>
+    <data>
+        <display>
+        <title>投马-Markdown介绍</title>
+        <pubTime>2018-06-25T16:00:00.000Z</pubTime>
+        
+        <tag>toastmaster</tag>
+         
+         
+           
+             
+              <breadCrumb title="english" url="http://agehua.github.io/categories/english/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://agehua.github.io/2018/04/02/Toastmaster-two-drawbacks/</loc>
     <lastmod>2018-08-23T13:50:26.122Z</lastmod>
@@ -113,7 +135,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://agehua.github.io/2018/04/23/Usage-of-genericity/</loc>
@@ -136,37 +157,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2018/06/26/Toastmaster-md-introduction/</loc>
-    <lastmod>2018-08-23T13:50:26.122Z</lastmod>
-    <data>
-        <display>
-        <title>投马-Markdown介绍</title>
-        <pubTime>2018-06-25T16:00:00.000Z</pubTime>
-        
-        <tag>toastmaster</tag>
-         
-         
-           
-             
-              <breadCrumb title="english" url="http://agehua.github.io/categories/english/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://agehua.github.io/2018/03/01/IntervieweeQuestions-senior/</loc>
+    <loc>http://agehua.github.io/2018/03/14/IntentService-AsyncTask/</loc>
     <lastmod>2018-08-23T13:50:26.121Z</lastmod>
     <data>
         <display>
-        <title>Android面试题积累(高阶)</title>
-        <pubTime>2018-02-28T16:00:00.000Z</pubTime>
+        <title>IntentService和AsyncTask的区别</title>
+        <pubTime>2018-03-13T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
+        <tag>IntentService</tag>
          
-        <tag>Interview Knowledge</tag>
+        <tag>AsyncTask</tag>
          
          
            
@@ -179,16 +179,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2018/03/14/IntentService-AsyncTask/</loc>
+    <loc>http://agehua.github.io/2018/03/01/IntervieweeQuestions-senior/</loc>
     <lastmod>2018-08-23T13:50:26.121Z</lastmod>
     <data>
         <display>
-        <title>IntentService和AsyncTask的区别</title>
-        <pubTime>2018-03-13T16:00:00.000Z</pubTime>
+        <title>Android面试题积累(高阶)</title>
+        <pubTime>2018-02-28T16:00:00.000Z</pubTime>
         
-        <tag>IntentService</tag>
+        <tag>ANDROID</tag>
          
-        <tag>AsyncTask</tag>
+        <tag>Interview Knowledge</tag>
          
          
            
@@ -245,6 +245,28 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2017/10/22/JavaScript-knowledge/</loc>
+    <lastmod>2018-08-23T13:50:26.120Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript知识点积累</title>
+        <pubTime>2017-10-21T16:00:00.000Z</pubTime>
+        
+        <tag>Basic Knowledge</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2018/02/24/Mac-terminal-command/</loc>
     <lastmod>2018-08-23T13:50:26.120Z</lastmod>
     <data>
@@ -265,14 +287,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/10/22/JavaScript-knowledge/</loc>
-    <lastmod>2018-08-23T13:50:26.120Z</lastmod>
+    <loc>http://agehua.github.io/2017/10/22/Buildcross-platform-desktop-apps/</loc>
+    <lastmod>2018-08-23T13:50:26.119Z</lastmod>
     <data>
         <display>
-        <title>JavaScript知识点积累</title>
+        <title>跨平台桌面程序开发</title>
         <pubTime>2017-10-21T16:00:00.000Z</pubTime>
         
-        <tag>Basic Knowledge</tag>
+        <tag>Alfred Workflow</tag>
+         
+        <tag>Electron</tag>
          
         <tag>JavaScript</tag>
          
@@ -299,30 +323,6 @@
         <tag>PBOC</tag>
          
         <tag>PBOC 2.0</tag>
-         
-         
-           
-             
-              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2017/10/22/Buildcross-platform-desktop-apps/</loc>
-    <lastmod>2018-08-23T13:50:26.119Z</lastmod>
-    <data>
-        <display>
-        <title>跨平台桌面程序开发</title>
-        <pubTime>2017-10-21T16:00:00.000Z</pubTime>
-        
-        <tag>Alfred Workflow</tag>
-         
-        <tag>Electron</tag>
-         
-        <tag>JavaScript</tag>
          
          
            
@@ -366,9 +366,9 @@
         <title>Activity启动流程分析</title>
         <pubTime>2017-08-01T16:00:00.000Z</pubTime>
         
-        <tag>Binder</tag>
-         
         <tag>AOSP</tag>
+         
+        <tag>Binder</tag>
          
         <tag>AMS</tag>
          
@@ -495,18 +495,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/05/11/Object-Oriented/</loc>
+    <loc>http://agehua.github.io/2017/04/10/Annotation-Android-usage/</loc>
     <lastmod>2018-08-23T13:50:26.112Z</lastmod>
     <data>
         <display>
-        <title>Android架构师积累</title>
-        <pubTime>2017-05-10T16:00:00.000Z</pubTime>
+        <title>注解在Android中的应用</title>
+        <pubTime>2017-04-09T16:00:00.000Z</pubTime>
         
-        <tag>Android Framework</tag>
+        <tag>ANDROID</tag>
          
-        <tag>EIT</tag>
-         
-        <tag>Object-oriented</tag>
+        <tag>Annotation</tag>
          
          
            
@@ -519,16 +517,18 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/04/10/Annotation-Android-usage/</loc>
+    <loc>http://agehua.github.io/2017/05/11/Object-Oriented/</loc>
     <lastmod>2018-08-23T13:50:26.112Z</lastmod>
     <data>
         <display>
-        <title>注解在Android中的应用</title>
-        <pubTime>2017-04-09T16:00:00.000Z</pubTime>
+        <title>Android架构师积累</title>
+        <pubTime>2017-05-10T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
+        <tag>Android Framework</tag>
          
-        <tag>Annotation</tag>
+        <tag>EIT</tag>
+         
+        <tag>Object-oriented</tag>
          
          
            
@@ -563,14 +563,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/03/09/Https-Questions/</loc>
+    <loc>http://agehua.github.io/2017/03/14/JAVA-JSR-330-Assertion/</loc>
     <lastmod>2018-08-23T13:50:26.111Z</lastmod>
     <data>
         <display>
-        <title>“HTTPS”安全在哪里？</title>
-        <pubTime>2017-03-08T16:00:00.000Z</pubTime>
+        <title>JSR-330和assertion(断言)介绍</title>
+        <pubTime>2017-03-13T16:00:00.000Z</pubTime>
         
-        <tag>HTTPS</tag>
+        <tag>Annotation</tag>
+         
+        <tag>assertion</tag>
          
          
            
@@ -605,16 +607,14 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/03/14/JAVA-JSR-330-Assertion/</loc>
+    <loc>http://agehua.github.io/2017/03/09/Https-Questions/</loc>
     <lastmod>2018-08-23T13:50:26.111Z</lastmod>
     <data>
         <display>
-        <title>JSR-330和assertion(断言)介绍</title>
-        <pubTime>2017-03-13T16:00:00.000Z</pubTime>
+        <title>“HTTPS”安全在哪里？</title>
+        <pubTime>2017-03-08T16:00:00.000Z</pubTime>
         
-        <tag>Annotation</tag>
-         
-        <tag>assertion</tag>
+        <tag>HTTPS</tag>
          
          
            
@@ -627,16 +627,18 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/12/06/hexo-learning1/</loc>
+    <loc>http://agehua.github.io/2017/02/12/iterm2-to-linux/</loc>
     <lastmod>2018-08-23T13:50:26.110Z</lastmod>
     <data>
         <display>
-        <title>Hexo 模板学习——Hexo 结构</title>
-        <pubTime>2016-12-05T16:00:00.000Z</pubTime>
+        <title>MAC下用iTerm2连接远程主机</title>
+        <pubTime>2017-02-11T16:00:00.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>linux</tag>
          
-        <tag>Hexo structure</tag>
+        <tag>iterm</tag>
+         
+        <tag>scp</tag>
          
          
            
@@ -691,18 +693,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/02/12/iterm2-to-linux/</loc>
+    <loc>http://agehua.github.io/2016/12/06/hexo-learning1/</loc>
     <lastmod>2018-08-23T13:50:26.110Z</lastmod>
     <data>
         <display>
-        <title>MAC下用iTerm2连接远程主机</title>
-        <pubTime>2017-02-11T16:00:00.000Z</pubTime>
+        <title>Hexo 模板学习——Hexo 结构</title>
+        <pubTime>2016-12-05T16:00:00.000Z</pubTime>
         
-        <tag>linux</tag>
+        <tag>Hexo</tag>
          
-        <tag>iterm</tag>
-         
-        <tag>scp</tag>
+        <tag>Hexo structure</tag>
          
          
            
@@ -730,28 +730,6 @@
            
              
               <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2016/12/03/nodejs-learning-getting-started/</loc>
-    <lastmod>2018-08-23T13:50:26.109Z</lastmod>
-    <data>
-        <display>
-        <title>nodejs入门</title>
-        <pubTime>2016-12-02T16:00:00.000Z</pubTime>
-        
-        <tag>read</tag>
-         
-        <tag>nodejs</tag>
-         
-         
-           
-             
-              <breadCrumb title="read" url="http://agehua.github.io/categories/read/"/>
           
         </display>
     </data>
@@ -803,16 +781,36 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/09/28/Android-interview-questions/</loc>
+    <loc>http://agehua.github.io/2016/12/03/nodejs-learning-getting-started/</loc>
+    <lastmod>2018-08-23T13:50:26.109Z</lastmod>
+    <data>
+        <display>
+        <title>nodejs入门</title>
+        <pubTime>2016-12-02T16:00:00.000Z</pubTime>
+        
+        <tag>read</tag>
+         
+        <tag>nodejs</tag>
+         
+         
+           
+             
+              <breadCrumb title="read" url="http://agehua.github.io/categories/read/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://agehua.github.io/2016/10/12/gradle-learning/</loc>
     <lastmod>2018-08-23T13:50:26.108Z</lastmod>
     <data>
         <display>
-        <title>Android面试知识点整理</title>
-        <pubTime>2016-09-27T16:00:00.000Z</pubTime>
+        <title>gradle 学习</title>
+        <pubTime>2016-10-11T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
-         
-        <tag>Interview Knowledge</tag>
+        <tag>gradle</tag>
          
          
            
@@ -825,14 +823,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/11/03/hexo-mac-module-not-found/</loc>
+    <loc>http://agehua.github.io/2016/09/28/Android-interview-questions/</loc>
     <lastmod>2018-08-23T13:50:26.108Z</lastmod>
     <data>
         <display>
-        <title>Hexo 出错情况收集</title>
-        <pubTime>2016-11-02T16:00:00.000Z</pubTime>
+        <title>Android面试知识点整理</title>
+        <pubTime>2016-09-27T16:00:00.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>ANDROID</tag>
+         
+        <tag>Interview Knowledge</tag>
          
          
            
@@ -865,14 +865,14 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/10/12/gradle-learning/</loc>
+    <loc>http://agehua.github.io/2016/11/03/hexo-mac-module-not-found/</loc>
     <lastmod>2018-08-23T13:50:26.108Z</lastmod>
     <data>
         <display>
-        <title>gradle 学习</title>
-        <pubTime>2016-10-11T16:00:00.000Z</pubTime>
+        <title>Hexo 出错情况收集</title>
+        <pubTime>2016-11-02T16:00:00.000Z</pubTime>
         
-        <tag>gradle</tag>
+        <tag>Hexo</tag>
          
          
            
@@ -973,16 +973,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/08/16/RxAndroid-Learning/</loc>
+    <loc>http://agehua.github.io/2016/08/03/android-LocationListener/</loc>
     <lastmod>2018-08-23T13:50:26.106Z</lastmod>
     <data>
         <display>
-        <title>RxJava 学习</title>
-        <pubTime>2016-08-15T16:00:00.000Z</pubTime>
+        <title>Android手机定位服务</title>
+        <pubTime>2016-08-02T16:00:00.000Z</pubTime>
         
-        <tag>RxJava</tag>
+        <tag>ANDROID</tag>
          
-        <tag>RxAndroid</tag>
+        <tag>LocationListener</tag>
          
          
            
@@ -995,16 +995,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/08/03/android-LocationListener/</loc>
+    <loc>http://agehua.github.io/2016/08/16/RxAndroid-Learning/</loc>
     <lastmod>2018-08-23T13:50:26.106Z</lastmod>
     <data>
         <display>
-        <title>Android手机定位服务</title>
-        <pubTime>2016-08-02T16:00:00.000Z</pubTime>
+        <title>RxJava 学习</title>
+        <pubTime>2016-08-15T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
+        <tag>RxJava</tag>
          
-        <tag>LocationListener</tag>
+        <tag>RxAndroid</tag>
          
          
            
@@ -1063,16 +1063,14 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/07/25/android-webview-summary/</loc>
+    <loc>http://agehua.github.io/2016/06/08/gson-summary/</loc>
     <lastmod>2018-08-23T13:50:26.105Z</lastmod>
     <data>
         <display>
-        <title>Android Webview总结，不断更新中 :(</title>
-        <pubTime>2016-07-24T16:00:00.000Z</pubTime>
+        <title>Gson解析使用总结</title>
+        <pubTime>2016-06-07T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
-         
-        <tag>webview</tag>
+        <tag>gson</tag>
          
          
            
@@ -1107,14 +1105,42 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/06/08/gson-summary/</loc>
+    <loc>http://agehua.github.io/2016/07/25/android-webview-summary/</loc>
     <lastmod>2018-08-23T13:50:26.105Z</lastmod>
     <data>
         <display>
-        <title>Gson解析使用总结</title>
-        <pubTime>2016-06-07T16:00:00.000Z</pubTime>
+        <title>Android Webview总结，不断更新中 :(</title>
+        <pubTime>2016-07-24T16:00:00.000Z</pubTime>
         
-        <tag>gson</tag>
+        <tag>ANDROID</tag>
+         
+        <tag>webview</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://agehua.github.io/2016/05/12/GCM-Azure_summary/</loc>
+    <lastmod>2018-08-23T13:50:26.104Z</lastmod>
+    <data>
+        <display>
+        <title>google cloud message（GCM）和Azure实现Notification总结</title>
+        <pubTime>2016-05-11T16:00:00.000Z</pubTime>
+        
+        <tag>ANDROID</tag>
+         
+        <tag>GCM</tag>
+         
+        <tag>azure</tag>
+         
+        <tag>notification</tag>
          
          
            
@@ -1195,25 +1221,19 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/05/12/GCM-Azure_summary/</loc>
-    <lastmod>2018-08-23T13:50:26.104Z</lastmod>
+    <loc>http://agehua.github.io/2015/11/06/book-list-of-2015/</loc>
+    <lastmod>2018-08-23T13:50:26.103Z</lastmod>
     <data>
         <display>
-        <title>google cloud message（GCM）和Azure实现Notification总结</title>
-        <pubTime>2016-05-11T16:00:00.000Z</pubTime>
+        <title>2015阅读书单</title>
+        <pubTime>2015-11-05T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
-         
-        <tag>GCM</tag>
-         
-        <tag>azure</tag>
-         
-        <tag>notification</tag>
+        <tag>read</tag>
          
          
            
              
-              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+              <breadCrumb title="read" url="http://agehua.github.io/categories/read/"/>
           
         </display>
     </data>
@@ -1221,16 +1241,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/03/15/facebook-google+signin/</loc>
+    <loc>http://agehua.github.io/2016/03/20/android-books-reading-/</loc>
     <lastmod>2018-08-23T13:50:26.103Z</lastmod>
     <data>
         <display>
-        <title>近期总结facebook google+ Twitter sign-in fragment使用</title>
-        <pubTime>2016-03-14T16:00:00.000Z</pubTime>
+        <title>《android开发艺术探索》读书笔记</title>
+        <pubTime>2016-03-19T16:00:00.000Z</pubTime>
         
         <tag>ANDROID</tag>
          
-        <tag>third-party signin</tag>
+        <tag>reading</tag>
          
          
            
@@ -1267,36 +1287,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2015/11/06/book-list-of-2015/</loc>
+    <loc>http://agehua.github.io/2016/03/15/facebook-google+signin/</loc>
     <lastmod>2018-08-23T13:50:26.103Z</lastmod>
     <data>
         <display>
-        <title>2015阅读书单</title>
-        <pubTime>2015-11-05T16:00:00.000Z</pubTime>
-        
-        <tag>read</tag>
-         
-         
-           
-             
-              <breadCrumb title="read" url="http://agehua.github.io/categories/read/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2016/03/20/android-books-reading-/</loc>
-    <lastmod>2018-08-23T13:50:26.103Z</lastmod>
-    <data>
-        <display>
-        <title>《android开发艺术探索》读书笔记</title>
-        <pubTime>2016-03-19T16:00:00.000Z</pubTime>
+        <title>近期总结facebook google+ Twitter sign-in fragment使用</title>
+        <pubTime>2016-03-14T16:00:00.000Z</pubTime>
         
         <tag>ANDROID</tag>
          
-        <tag>reading</tag>
+        <tag>third-party signin</tag>
          
          
            
