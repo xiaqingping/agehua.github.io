@@ -51,28 +51,6 @@
     
     
   <url>
-    <loc>http://agehua.github.io/2018/06/08/JVM-stack-heap-GC/</loc>
-    <lastmod>2018-12-07T03:38:53.788Z</lastmod>
-    <data>
-        <display>
-        <title>Java的内存管理与垃圾回收</title>
-        <pubTime>2018-06-07T16:00:00.000Z</pubTime>
-        
-        <tag>GC</tag>
-         
-        <tag>JVM</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://agehua.github.io/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://agehua.github.io/2018/06/26/Toastmaster-md-introduction/</loc>
     <lastmod>2018-12-07T03:38:53.788Z</lastmod>
     <data>
@@ -93,14 +71,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2018/04/23/Usage-of-genericity/</loc>
-    <lastmod>2018-12-07T03:38:53.787Z</lastmod>
+    <loc>http://agehua.github.io/2018/06/08/JVM-stack-heap-GC/</loc>
+    <lastmod>2018-12-07T03:38:53.788Z</lastmod>
     <data>
         <display>
-        <title>泛型的应用</title>
-        <pubTime>2018-04-22T16:00:00.000Z</pubTime>
+        <title>Java的内存管理与垃圾回收</title>
+        <pubTime>2018-06-07T16:00:00.000Z</pubTime>
         
-        <tag>genericity</tag>
+        <tag>GC</tag>
+         
+        <tag>JVM</tag>
          
          
            
@@ -128,6 +108,26 @@
            
              
               <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://agehua.github.io/2018/04/23/Usage-of-genericity/</loc>
+    <lastmod>2018-12-07T03:38:53.787Z</lastmod>
+    <data>
+        <display>
+        <title>泛型的应用</title>
+        <pubTime>2018-04-22T16:00:00.000Z</pubTime>
+        
+        <tag>genericity</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://agehua.github.io/categories/java/"/>
           
         </display>
     </data>
@@ -219,16 +219,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/12/02/Python-knowledge/</loc>
+    <loc>http://agehua.github.io/2017/10/22/JavaScript-knowledge/</loc>
     <lastmod>2018-12-07T03:38:53.784Z</lastmod>
     <data>
         <display>
-        <title>Python知识积累</title>
-        <pubTime>2017-12-01T16:00:00.000Z</pubTime>
+        <title>JavaScript知识点积累</title>
+        <pubTime>2017-10-21T16:00:00.000Z</pubTime>
         
         <tag>Basic Knowledge</tag>
          
-        <tag>Python</tag>
+        <tag>JavaScript</tag>
          
          
            
@@ -241,16 +241,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/10/22/JavaScript-knowledge/</loc>
+    <loc>http://agehua.github.io/2017/12/02/Python-knowledge/</loc>
     <lastmod>2018-12-07T03:38:53.784Z</lastmod>
     <data>
         <display>
-        <title>JavaScript知识点积累</title>
-        <pubTime>2017-10-21T16:00:00.000Z</pubTime>
+        <title>Python知识积累</title>
+        <pubTime>2017-12-01T16:00:00.000Z</pubTime>
         
         <tag>Basic Knowledge</tag>
          
-        <tag>JavaScript</tag>
+        <tag>Python</tag>
          
          
            
@@ -364,9 +364,9 @@
         <title>Activity启动流程分析</title>
         <pubTime>2017-08-01T16:00:00.000Z</pubTime>
         
-        <tag>AOSP</tag>
-         
         <tag>Binder</tag>
+         
+        <tag>AOSP</tag>
          
         <tag>AMS</tag>
          
@@ -427,6 +427,28 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2017/07/08/android-binder-principle/</loc>
+    <lastmod>2018-12-07T03:38:53.778Z</lastmod>
+    <data>
+        <display>
+        <title>Android Binder机制分析（一）</title>
+        <pubTime>2017-07-07T16:00:00.000Z</pubTime>
+        
+        <tag>AIDL</tag>
+         
+        <tag>Binder</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2017/07/10/android-binder-principle2/</loc>
     <lastmod>2018-12-07T03:38:53.778Z</lastmod>
     <data>
@@ -449,16 +471,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/07/08/android-binder-principle/</loc>
-    <lastmod>2018-12-07T03:38:53.778Z</lastmod>
+    <loc>http://agehua.github.io/2017/05/18/handler-replace-timertask/</loc>
+    <lastmod>2018-12-07T03:38:53.777Z</lastmod>
     <data>
         <display>
-        <title>Android Binder机制分析（一）</title>
-        <pubTime>2017-07-07T16:00:00.000Z</pubTime>
+        <title>Handler替代TimerTask</title>
+        <pubTime>2017-05-17T16:00:00.000Z</pubTime>
         
-        <tag>AIDL</tag>
+        <tag>TimerTask</tag>
          
-        <tag>Binder</tag>
+        <tag>handler</tag>
          
          
            
@@ -483,28 +505,6 @@
         <tag>EIT</tag>
          
         <tag>Object-oriented</tag>
-         
-         
-           
-             
-              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2017/05/18/handler-replace-timertask/</loc>
-    <lastmod>2018-12-07T03:38:53.777Z</lastmod>
-    <data>
-        <display>
-        <title>Handler替代TimerTask</title>
-        <pubTime>2017-05-17T16:00:00.000Z</pubTime>
-        
-        <tag>TimerTask</tag>
-         
-        <tag>handler</tag>
          
          
            
@@ -546,9 +546,29 @@
         <title>linux(centos) 搭建SVN服务器</title>
         <pubTime>2017-03-19T16:00:00.000Z</pubTime>
         
+        <tag>linux</tag>
+         
         <tag>svn server</tag>
          
-        <tag>linux</tag>
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://agehua.github.io/2017/03/09/Https-Questions/</loc>
+    <lastmod>2018-12-07T03:38:53.775Z</lastmod>
+    <data>
+        <display>
+        <title>“HTTPS”安全在哪里？</title>
+        <pubTime>2017-03-08T16:00:00.000Z</pubTime>
+        
+        <tag>HTTPS</tag>
          
          
            
@@ -583,19 +603,19 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/03/09/Https-Questions/</loc>
-    <lastmod>2018-12-07T03:38:53.775Z</lastmod>
+    <loc>http://agehua.github.io/2017/01/13/abroad-IM-service-company/</loc>
+    <lastmod>2018-12-07T03:38:53.774Z</lastmod>
     <data>
         <display>
-        <title>“HTTPS”安全在哪里？</title>
-        <pubTime>2017-03-08T16:00:00.000Z</pubTime>
+        <title>IM 国外公司，服务费，方案</title>
+        <pubTime>2017-01-12T16:00:00.000Z</pubTime>
         
-        <tag>HTTPS</tag>
+        <tag>IM Company</tag>
          
          
            
              
-              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+              <breadCrumb title="Investigation" url="http://agehua.github.io/categories/investigation/"/>
           
         </display>
     </data>
@@ -625,26 +645,6 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2017/01/13/abroad-IM-service-company/</loc>
-    <lastmod>2018-12-07T03:38:53.774Z</lastmod>
-    <data>
-        <display>
-        <title>IM 国外公司，服务费，方案</title>
-        <pubTime>2017-01-12T16:00:00.000Z</pubTime>
-        
-        <tag>IM Company</tag>
-         
-         
-           
-             
-              <breadCrumb title="Investigation" url="http://agehua.github.io/categories/investigation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://agehua.github.io/2017/02/12/iterm2-to-linux/</loc>
     <lastmod>2018-12-07T03:38:53.774Z</lastmod>
     <data>
@@ -657,6 +657,28 @@
         <tag>iterm</tag>
          
         <tag>scp</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://agehua.github.io/2016/12/11/ThreadLocal-usage/</loc>
+    <lastmod>2018-12-07T03:38:53.773Z</lastmod>
+    <data>
+        <display>
+        <title>ThreadLocal一个使用——SimpleDateFormat</title>
+        <pubTime>2016-12-10T16:00:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>ThreadLocal</tag>
          
          
            
@@ -713,28 +735,6 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/12/11/ThreadLocal-usage/</loc>
-    <lastmod>2018-12-07T03:38:53.773Z</lastmod>
-    <data>
-        <display>
-        <title>ThreadLocal一个使用——SimpleDateFormat</title>
-        <pubTime>2016-12-10T16:00:00.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>ThreadLocal</tag>
-         
-         
-           
-             
-              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://agehua.github.io/2016/12/03/nodejs-learning-getting-started/</loc>
     <lastmod>2018-12-07T03:38:53.772Z</lastmod>
     <data>
@@ -767,28 +767,6 @@
         <tag>Hexo</tag>
          
         <tag>EJS</tag>
-         
-         
-           
-             
-              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2016/11/21/Difference_between-T-E-K-V/</loc>
-    <lastmod>2018-12-07T03:38:53.770Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA泛型通配符T，E，K，V区别，T以及Class<T>，Class<?>的区别</title>
-        <pubTime>2016-11-20T16:00:00.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>genericity</tag>
          
          
            
@@ -841,16 +819,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/09/28/Android-interview-questions/</loc>
-    <lastmod>2018-12-07T03:38:53.769Z</lastmod>
+    <loc>http://agehua.github.io/2016/11/21/Difference_between-T-E-K-V/</loc>
+    <lastmod>2018-12-07T03:38:53.770Z</lastmod>
     <data>
         <display>
-        <title>Android面试知识点整理</title>
-        <pubTime>2016-09-27T16:00:00.000Z</pubTime>
+        <title>JAVA泛型通配符T，E，K，V区别，T以及Class<T>，Class<?>的区别</title>
+        <pubTime>2016-11-20T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
+        <tag>Java</tag>
          
-        <tag>Interview Knowledge</tag>
+        <tag>genericity</tag>
          
          
            
@@ -871,6 +849,28 @@
         <pubTime>2016-10-11T16:00:00.000Z</pubTime>
         
         <tag>gradle</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://agehua.github.io/2016/09/28/Android-interview-questions/</loc>
+    <lastmod>2018-12-07T03:38:53.769Z</lastmod>
+    <data>
+        <display>
+        <title>Android面试知识点整理</title>
+        <pubTime>2016-09-27T16:00:00.000Z</pubTime>
+        
+        <tag>ANDROID</tag>
+         
+        <tag>Interview Knowledge</tag>
          
          
            
@@ -905,16 +905,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/09/22/JNI-get-publickey/</loc>
+    <loc>http://agehua.github.io/2016/09/22/quit-whole-application/</loc>
     <lastmod>2018-12-07T03:38:53.768Z</lastmod>
     <data>
         <display>
-        <title>使用JNI获取publickey实现</title>
+        <title>Android 退出整个应用程序解决方案</title>
         <pubTime>2016-09-21T16:00:00.000Z</pubTime>
         
-        <tag>JNI</tag>
+        <tag>ANDROID</tag>
          
-        <tag>publickey</tag>
+        <tag>exitApplication</tag>
          
          
            
@@ -927,16 +927,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/09/22/quit-whole-application/</loc>
+    <loc>http://agehua.github.io/2016/09/22/JNI-get-publickey/</loc>
     <lastmod>2018-12-07T03:38:53.768Z</lastmod>
     <data>
         <display>
-        <title>Android 退出整个应用程序解决方案</title>
+        <title>使用JNI获取publickey实现</title>
         <pubTime>2016-09-21T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
+        <tag>JNI</tag>
          
-        <tag>exitApplication</tag>
+        <tag>publickey</tag>
          
          
            
@@ -971,6 +971,28 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2016/08/16/RxAndroid-Learning/</loc>
+    <lastmod>2018-12-07T03:38:53.767Z</lastmod>
+    <data>
+        <display>
+        <title>RxJava 学习</title>
+        <pubTime>2016-08-15T16:00:00.000Z</pubTime>
+        
+        <tag>RxJava</tag>
+         
+        <tag>RxAndroid</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://agehua.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2016/09/05/ThreadLocal-HandlerThread-Looper/</loc>
     <lastmod>2018-12-07T03:38:53.767Z</lastmod>
     <data>
@@ -988,28 +1010,6 @@
            
              
               <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2016/08/16/RxAndroid-Learning/</loc>
-    <lastmod>2018-12-07T03:38:53.767Z</lastmod>
-    <data>
-        <display>
-        <title>RxJava 学习</title>
-        <pubTime>2016-08-15T16:00:00.000Z</pubTime>
-        
-        <tag>RxJava</tag>
-         
-        <tag>RxAndroid</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="http://agehua.github.io/categories/technology/"/>
           
         </display>
     </data>
@@ -1147,18 +1147,16 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/03/20/android-new-knowledge-summary/</loc>
+    <loc>http://agehua.github.io/2016/05/18/javaString-and-bytes/</loc>
     <lastmod>2018-12-07T03:38:53.761Z</lastmod>
     <data>
         <display>
-        <title>android新特性新知识点总结</title>
-        <pubTime>2016-03-19T16:00:00.000Z</pubTime>
+        <title>Java String与C/C++中byte[]</title>
+        <pubTime>2016-05-17T16:00:00.000Z</pubTime>
         
-        <tag>ANDROID</tag>
+        <tag>Java</tag>
          
-        <tag>new features</tag>
-         
-        <tag>Basic Knowledge</tag>
+        <tag>byte[]</tag>
          
          
            
@@ -1197,16 +1195,18 @@
 
     
   <url>
-    <loc>http://agehua.github.io/2016/05/18/javaString-and-bytes/</loc>
+    <loc>http://agehua.github.io/2016/03/20/android-new-knowledge-summary/</loc>
     <lastmod>2018-12-07T03:38:53.761Z</lastmod>
     <data>
         <display>
-        <title>Java String与C/C++中byte[]</title>
-        <pubTime>2016-05-17T16:00:00.000Z</pubTime>
+        <title>android新特性新知识点总结</title>
+        <pubTime>2016-03-19T16:00:00.000Z</pubTime>
         
-        <tag>Java</tag>
+        <tag>ANDROID</tag>
          
-        <tag>byte[]</tag>
+        <tag>new features</tag>
+         
+        <tag>Basic Knowledge</tag>
          
          
            
@@ -1263,6 +1263,26 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2015/11/06/book-list-of-2015/</loc>
+    <lastmod>2018-12-07T03:38:53.759Z</lastmod>
+    <data>
+        <display>
+        <title>2015阅读书单</title>
+        <pubTime>2015-11-05T16:00:00.000Z</pubTime>
+        
+        <tag>read</tag>
+         
+         
+           
+             
+              <breadCrumb title="read" url="http://agehua.github.io/categories/read/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2016/03/01/android-googlemap-summary/</loc>
     <lastmod>2018-12-07T03:38:53.759Z</lastmod>
     <data>
@@ -1278,26 +1298,6 @@
            
              
               <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2015/11/06/book-list-of-2015/</loc>
-    <lastmod>2018-12-07T03:38:53.759Z</lastmod>
-    <data>
-        <display>
-        <title>2015阅读书单</title>
-        <pubTime>2015-11-05T16:00:00.000Z</pubTime>
-        
-        <tag>read</tag>
-         
-         
-           
-             
-              <breadCrumb title="read" url="http://agehua.github.io/categories/read/"/>
           
         </display>
     </data>
