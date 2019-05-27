@@ -5,13 +5,13 @@
     
   <url>
     <loc>http://agehua.github.io/2019/05/27/TCP-Three-way-Handshake/</loc>
-    <lastmod>2019-05-27T06:32:16.000Z</lastmod>
+    <lastmod>2019-05-27T06:49:29.295Z</lastmod>
     <data>
         <display>
-        <title>Android避免网络请求造成内存泄漏</title>
+        <title>TCP三次握手解读</title>
         <pubTime>2019-05-26T16:00:00.000Z</pubTime>
         
-        <tag>Android APP Bundles</tag>
+        <tag>TCP</tag>
          
          
            
