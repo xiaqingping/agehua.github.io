@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://agehua.github.io/2019/03/27/Android-APP-Bundles-Introduction/</loc>
+    
+    <lastmod>2019-05-28T08:09:45.306Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://agehua.github.io/2019/05/27/TCP-Three-way-Handshake/</loc>
     
     <lastmod>2019-05-27T08:28:02.996Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://agehua.github.io/2018/12/06/Android-audio-introduction/</loc>
     
     <lastmod>2019-05-27T06:27:31.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://agehua.github.io/2019/03/27/Android-APP-Bundles-Introduction/</loc>
-    
-    <lastmod>2019-03-27T10:47:02.896Z</lastmod>
     
   </url>
   

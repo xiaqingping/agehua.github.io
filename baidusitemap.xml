@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2019/03/27/Android-APP-Bundles-Introduction/</loc>
+    <lastmod>2019-05-28T08:09:45.306Z</lastmod>
+    <data>
+        <display>
+        <title>Android App Bundle(AAB) 文件介绍</title>
+        <pubTime>2019-03-26T16:00:00.000Z</pubTime>
+        
+        <tag>Android APP Bundles</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2019/05/27/TCP-Three-way-Handshake/</loc>
     <lastmod>2019-05-27T08:28:02.996Z</lastmod>
     <data>
@@ -34,26 +54,6 @@
         <tag>AudioRecord</tag>
          
         <tag>AAC</tag>
-         
-         
-           
-             
-              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://agehua.github.io/2019/03/27/Android-APP-Bundles-Introduction/</loc>
-    <lastmod>2019-03-27T10:47:02.896Z</lastmod>
-    <data>
-        <display>
-        <title>Android避免网络请求造成内存泄漏</title>
-        <pubTime>2019-03-26T16:00:00.000Z</pubTime>
-        
-        <tag>Android APP Bundles</tag>
          
          
            
@@ -873,11 +873,11 @@
         <title>跨平台桌面程序开发</title>
         <pubTime>2017-10-21T16:00:00.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>Alfred Workflow</tag>
          
         <tag>Electron</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
