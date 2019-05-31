@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://agehua.github.io/2019/06/01/RecyclerView-pre-initiate/</loc>
-    
-    <lastmod>2019-05-31T09:16:42.115Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://agehua.github.io/2019/05/31/RecyclerView-source-code/</loc>
     
     <lastmod>2019-05-31T09:12:37.702Z</lastmod>
