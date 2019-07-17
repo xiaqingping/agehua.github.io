@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://agehua.github.io/2019/07/17/RecyclerView-pre-initiate/</loc>
-    <lastmod>2019-07-17T09:18:05.006Z</lastmod>
+    <lastmod>2019-07-17T10:06:34.077Z</lastmod>
     <data>
         <display>
         <title>RecyclerView预加载机制源码分析</title>
@@ -225,9 +225,9 @@
         
         <tag>Binder</tag>
          
-        <tag>AOSP</tag>
-         
         <tag>AMS</tag>
+         
+        <tag>AOSP</tag>
          
          
            
