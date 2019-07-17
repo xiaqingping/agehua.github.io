@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2019/07/17/RecyclerView-pre-initiate/</loc>
+    <lastmod>2019-07-17T09:18:05.006Z</lastmod>
+    <data>
+        <display>
+        <title>RecyclerView预加载机制源码分析</title>
+        <pubTime>2019-07-16T16:00:00.000Z</pubTime>
+        
+        <tag>RecyclerView</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2019/05/31/RecyclerView-source-code/</loc>
-    <lastmod>2019-05-31T09:12:37.702Z</lastmod>
+    <lastmod>2019-07-17T08:11:54.884Z</lastmod>
     <data>
         <display>
         <title>RecyclerView 源码分析</title>
@@ -25,7 +45,7 @@
     
   <url>
     <loc>http://agehua.github.io/2019/05/30/RecyclerView-Design-Pattern/</loc>
-    <lastmod>2019-05-31T09:12:01.788Z</lastmod>
+    <lastmod>2019-05-31T10:07:58.379Z</lastmod>
     <data>
         <display>
         <title>RecyclerView 中的设计模式</title>
