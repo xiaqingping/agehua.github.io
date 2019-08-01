@@ -454,6 +454,11 @@
 
 <div id='toc-col' class="toc-col">
     
+          <div id='toc-wrap' class="toc-wrap">
+              <strong class="toc-title">文章目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#煤矿中的金丝雀"><span class="toc-number">1.</span> <span class="toc-text">煤矿中的金丝雀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存泄漏检测的基本原理"><span class="toc-number">2.</span> <span class="toc-text">内存泄漏检测的基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Java垃圾回收-GC"><span class="toc-number">2.1.</span> <span class="toc-text">Java垃圾回收(GC)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LeakCanary使用"><span class="toc-number">3.</span> <span class="toc-text">LeakCanary使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#监听Activity销毁的方法"><span class="toc-number">3.1.</span> <span class="toc-text">监听Activity销毁的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#检测对象弱引用关联引用队列"><span class="toc-number">3.2.</span> <span class="toc-text">检测对象弱引用关联引用队列</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LeakCanary的线程调度"><span class="toc-number">4.</span> <span class="toc-text">LeakCanary的线程调度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IdleHandler的妙用"><span class="toc-number">4.1.</span> <span class="toc-text">IdleHandler的妙用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#手动触发GC"><span class="toc-number">4.2.</span> <span class="toc-text">手动触发GC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泄露信息分析"><span class="toc-number">5.</span> <span class="toc-text">泄露信息分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prof文件分析"><span class="toc-number">6.</span> <span class="toc-text">prof文件分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#返回分析结果"><span class="toc-number">6.1.</span> <span class="toc-text">返回分析结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习借鉴"><span class="toc-number">7.</span> <span class="toc-text">学习借鉴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ref"><span class="toc-number">8.</span> <span class="toc-text">Ref</span></a></li></ol>
+          </div>
+    
 </div>
 </aside>
 
@@ -536,7 +541,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
     </div>
 
 
-                        <div style="color:#cba11f;float:right">12 min read , Words: 2388</div>                    </div>
+                        <div style="color:#cba11f;float:right">13 min read , Words: 2403</div>                    </div>
                 
             </header>
         
@@ -560,7 +565,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/07/30/LeakCanary_source_code/" data-id="cjyqn3c7e005t2wvd2w7bt7mw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/07/30/LeakCanary_source_code/" data-id="cjys57q9w005r4kvdq922l06d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -720,7 +725,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/07/17/RecyclerView-pre-initiate/" data-id="cjyqn3c77005q2wvd9xdnpa3u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/07/17/RecyclerView-pre-initiate/" data-id="cjys57q9k005m4kvdo2gy1e0i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -877,7 +882,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/05/31/RecyclerView-source-code/" data-id="cjyqn3cd300ak2wvdu147yhhh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/05/31/RecyclerView-source-code/" data-id="cjys57qg500ag4kvdfz6ihiw9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1034,7 +1039,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/05/30/RecyclerView-Design-Pattern/" data-id="cjyqn3c74005m2wvdzm2hra25" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/05/30/RecyclerView-Design-Pattern/" data-id="cjys57q9q005o4kvds3cv8xd9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1192,7 +1197,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/05/27/TCP-Three-way-Handshake/" data-id="cjyqn3c71005j2wvd5ntri405" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/05/27/TCP-Three-way-Handshake/" data-id="cjys57q9i005j4kvdxd6ek40n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1347,7 +1352,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/03/27/Android-APP-Bundles-Introduction/" data-id="cjyqn3c6u005g2wvdonv8f8gb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/03/27/Android-APP-Bundles-Introduction/" data-id="cjys57q9500524kvdbre2eq8z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1507,7 +1512,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/01/26/Android-request-memory-leaks/" data-id="cjyqn3c6o005b2wvdv4yjrjvc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/01/26/Android-request-memory-leaks/" data-id="cjys57q9f005c4kvde6dewxgy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1671,7 +1676,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2018/12/06/Android-audio-introduction/" data-id="cjyqn3c6h00532wvdksc0oqyq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2018/12/06/Android-audio-introduction/" data-id="cjys57q9a00564kvd1j39xtlh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
