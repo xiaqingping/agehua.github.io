@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2019/09/12/Horizontal-Coordinator/</loc>
+    <lastmod>2019-10-08T05:51:39.924Z</lastmod>
+    <data>
+        <display>
+        <title>CoordinatorLayout源码解读</title>
+        <pubTime>2019-09-11T16:00:00.000Z</pubTime>
+        
+        <tag>CoordinatorLayout</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2019/07/30/LeakCanary_source_code/</loc>
     <lastmod>2019-08-01T01:53:51.820Z</lastmod>
     <data>
