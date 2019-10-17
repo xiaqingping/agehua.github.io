@@ -265,9 +265,9 @@
         
         <tag>Binder</tag>
          
-        <tag>AMS</tag>
-         
         <tag>AOSP</tag>
+         
+        <tag>AMS</tag>
          
          
            
@@ -993,11 +993,11 @@
         <title>跨平台桌面程序开发</title>
         <pubTime>2017-10-21T16:00:00.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>Alfred Workflow</tag>
          
         <tag>Electron</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
