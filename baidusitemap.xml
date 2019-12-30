@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://agehua.github.io/2019/12/09/Android-Measure/</loc>
+    <lastmod>2019-12-30T06:10:30.177Z</lastmod>
+    <data>
+        <display>
+        <title>从FrameLayout分析View测量原理</title>
+        <pubTime>2019-12-08T16:00:00.000Z</pubTime>
+        
+        <tag>FrameLayout</tag>
+         
+        <tag>RelativeLayout</tag>
+         
+        <tag>Measure</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://agehua.github.io/2019/12/08/Android-bits-operation/</loc>
+    <lastmod>2019-12-24T07:37:25.881Z</lastmod>
+    <data>
+        <display>
+        <title>弄懂Android 源码中那些巧妙位运算</title>
+        <pubTime>2019-12-07T16:00:00.000Z</pubTime>
+        
+        <tag>bits operation</tag>
+         
+         
+           
+             
+              <breadCrumb title="accumulation" url="http://agehua.github.io/categories/accumulation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://agehua.github.io/2019/09/12/Horizontal-Coordinator/</loc>
     <lastmod>2019-10-08T05:51:39.924Z</lastmod>
     <data>
