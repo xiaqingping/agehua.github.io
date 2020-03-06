@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://agehua.github.io/2019/12/09/Android-Measure/</loc>
-    <lastmod>2019-12-30T06:10:30.177Z</lastmod>
+    <lastmod>2020-03-06T01:53:56.030Z</lastmod>
     <data>
         <display>
         <title>从FrameLayout分析View测量原理</title>
@@ -1459,9 +1459,9 @@
         
         <tag>Java</tag>
          
-        <tag>Interview Knowledge</tag>
-         
         <tag>multi-thread</tag>
+         
+        <tag>Interview Knowledge</tag>
          
          
            

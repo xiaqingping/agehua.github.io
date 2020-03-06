@@ -16,7 +16,7 @@
 <meta property="og:description" content="Android View测量原理public class DecorView extends FrameLayout implements RootViewSurfaceTaker, WindowCallbacks &amp;#123;    //...&amp;#125; 我们知道DecorView是继承自FrameLayout，而且FrameLayout本身也比较简单，所以本文打算从FrameLayout的角">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://cdn.conorlee.top/Field%20with%20Stacks%20of%20Wheat.jpg">
-<meta property="og:updated_time" content="2019-12-30T06:10:30.177Z">
+<meta property="og:updated_time" content="2020-03-06T01:53:56.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从FrameLayout分析View测量原理">
 <meta name="twitter:description" content="Android View测量原理public class DecorView extends FrameLayout implements RootViewSurfaceTaker, WindowCallbacks &amp;#123;    //...&amp;#125; 我们知道DecorView是继承自FrameLayout，而且FrameLayout本身也比较简单，所以本文打算从FrameLayout的角">
@@ -540,7 +540,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
     </div>
 
 
-                        <div style="color:#cba11f;float:right">10 min read , Words: 1818</div>                    </div>
+                        <div style="color:#cba11f;float:right">10 min read , Words: 1816</div>                    </div>
                 
             </header>
         
@@ -593,7 +593,6 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 <blockquote>
 <p>回答上面问题，为什么这种情况FrameLayout的子view会测量两次？<br>先看下图：<br><img src="/images/blogimages/2019/measure_twice_principle.jpg" alt=""><br>以宽度为例说明，因为FrameLayout可能包含多个子view，第一次测量后，设置了match_parent的view1和view2变为wrap_content，child.getMeasuredWidth为wrap_content的宽度，即子view自己的宽度。<br>由于有多个match_parent的子view，<strong>父view需要重新调整自己的宽度为最大的子view的宽度</strong>，所以所有的子view需要在根据父view的宽度重新调整一下自己的宽度，最终导致子view measure两次。</p>
 </blockquote>
-<p>但是为什么必须view大于1个才会重新计算，我没想明白，知道的同学可以评论告诉我，谢谢 ;)</p>
 <p>多说一句，RelativeLayout并没有用这个方法，而是自定义了一个getChildMeasureSpec()方法，所以RelativeLayout与FrameLayout表现上是不一样的。<br>感兴趣的可以在Android Studio里修改一下下面布局，替换RelativeLayout和FrameLayout，试一下看下效果：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;RelativeLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    android:layout_width=<span class="string">"wrap_content"</span></span><br><span class="line">    android:layout_height=<span class="string">"wrap_content"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"match_parent"</span></span><br><span class="line">        android:background=<span class="string">"@android:color/holo_red_light"</span></span><br><span class="line">        android:gravity=<span class="string">"center"</span></span><br><span class="line">        android:text=<span class="string">"text"</span> /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=<span class="string">"wrap_content"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">        android:gravity=<span class="string">"center"</span></span><br><span class="line">        android:text=<span class="string">"2222222222"</span> /&gt;</span><br><span class="line">&lt;/RelativeLayout&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><p><a href="https://www.zybuluo.com/TryLoveCatch/note/586111" target="_blank" rel="noopener">测量（Measure）</a></p>
@@ -719,7 +718,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/12/09/Android-Measure/" data-id="ck4s245to006x05vd5hm487ax" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/12/09/Android-Measure/" data-id="ck7fj0fou005v61vdoe3zgivn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1015,7 +1014,7 @@ gitment.render('comments')
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Jixin Li<br>
+            &copy; 2020 Jixin Li<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
     </div>
