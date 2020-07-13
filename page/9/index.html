@@ -454,11 +454,6 @@
 
 <div id='toc-col' class="toc-col">
     
-          <div id='toc-wrap' class="toc-wrap">
-              <strong class="toc-title">文章目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio-CPU-Profiler使用"><span class="toc-number">1.</span> <span class="toc-text">Android Studio CPU Profiler使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-Profiler"><span class="toc-number">1.1.</span> <span class="toc-text">CPU Profiler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何获取-trace-数据"><span class="toc-number">1.2.</span> <span class="toc-text">如何获取 trace 数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何生成app启动过程中的-trace数据"><span class="toc-number">1.3.</span> <span class="toc-text">如何生成app启动过程中的 trace数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何使用CPU-Profiler-进行分析"><span class="toc-number">1.4.</span> <span class="toc-text">如何使用CPU Profiler 进行分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App启动流程分析"><span class="toc-number">1.5.</span> <span class="toc-text">App启动流程分析</span></a></li></ol></li></ol>
-          </div>
-    
 </div>
 </aside>
 
@@ -565,7 +560,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/05/18/javaString-and-bytes/" data-id="ckck40lg8000ax1vd0iv3duvm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/05/18/javaString-and-bytes/" data-id="ckck4fnsq000ae5vdhzoau6m1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -724,7 +719,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/05/12/GCM-Azure_summary/" data-id="ckck40lgh000fx1vduu2x5uvq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/05/12/GCM-Azure_summary/" data-id="ckck4fnt7000re5vd2c313i07" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -793,6 +788,162 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
           
     
         <a href="http://agehua.github.io/2016/05/12/GCM-Azure_summary/#comments" class="article-comment-link">Comments</a>
+    
+
+
+        </footer>
+
+    </div>
+    
+    <script>
+        pangu.spacingPage();
+    </script>
+
+
+</article>
+
+
+
+
+    <article id="post-android-new-knowledge-summary" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2016/03/20/android-new-knowledge-summary/" itemprop="url">
+            <img src="http://cdn.conorlee.top/Blossoming%20Chestnut%20Branches.jpg" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/20/android-new-knowledge-summary/">android新特性新知识点总结</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/20/android-new-knowledge-summary/">
+            <time datetime="2016-03-19T16:00:00.000Z" itemprop="datePublished">2016-03-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/accumulation/">accumulation</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/android/">ANDROID</a>, <a class="tag-link" href="/tags/basic-knowledge/">Basic Knowledge</a>, <a class="tag-link" href="/tags/new-features/">new features</a>
+    </div>
+
+
+                        <div style="color:#cba11f;float:right">2 min read , Words: 366</div>                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h3 id="一、mipmap-目录和drawable-目录有什么区别"><a href="#一、mipmap-目录和drawable-目录有什么区别" class="headerlink" title="一、mipmap 目录和drawable 目录有什么区别"></a>一、mipmap 目录和drawable 目录有什么区别</h3><p>Nexus 6 有 493 ppi，它刚好在 xxhdpi和xxxhdpi之间，所以显示的时候需要对xxxhdpi的资源进行缩小，如果你用了mipmap-xxxhdpi,那么这里会对sclae有一个优化，性能更好，占用内存更少。所以现在官方推荐使用mipmap：</p>
+<h3 id="二、setTranslucentStatus-方法"><a href="#二、setTranslucentStatus-方法" class="headerlink" title="二、setTranslucentStatus()方法"></a>二、setTranslucentStatus()方法</h3><p>在Android4.4之后使用沉浸式状态栏，需要用到这个方法</p></p>
+            <p class="article-more-link">
+                <a href="/2016/03/20/android-new-knowledge-summary/#more">Read More</a>
+            </p>
+        
+        </div>
+
+        <footer class="article-footer">
+          
+
+          <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://agehua.github.io/2016/03/20/android-new-knowledge-summary/" data-id="ckck4fnsx000fe5vdsc0kn7i3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+          
+    
+        <a href="http://agehua.github.io/2016/03/20/android-new-knowledge-summary/#comments" class="article-comment-link">Comments</a>
     
 
 
@@ -886,7 +1037,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/03/20/android-books-reading-/" data-id="ckck40lgd000bx1vdued7u0sx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/03/20/android-books-reading-/" data-id="ckck4fnsn0009e5vdmbmbvu92" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -955,162 +1106,6 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
           
     
         <a href="http://agehua.github.io/2016/03/20/android-books-reading-/#comments" class="article-comment-link">Comments</a>
-    
-
-
-        </footer>
-
-    </div>
-    
-    <script>
-        pangu.spacingPage();
-    </script>
-
-
-</article>
-
-
-
-
-    <article id="post-android-new-knowledge-summary" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            
-	
-		<a href="/2016/03/20/android-new-knowledge-summary/" itemprop="url">
-            <img src="http://cdn.conorlee.top/Blossoming%20Chestnut%20Branches.jpg" class="article-banner" />
-        </a>
-	
-
-
-
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/20/android-new-knowledge-summary/">android新特性新知识点总结</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/20/android-new-knowledge-summary/">
-            <time datetime="2016-03-19T16:00:00.000Z" itemprop="datePublished">2016-03-20</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/accumulation/">accumulation</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/android/">ANDROID</a>, <a class="tag-link" href="/tags/basic-knowledge/">Basic Knowledge</a>, <a class="tag-link" href="/tags/new-features/">new features</a>
-    </div>
-
-
-                        <div style="color:#cba11f;float:right">2 min read , Words: 366</div>                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h3 id="一、mipmap-目录和drawable-目录有什么区别"><a href="#一、mipmap-目录和drawable-目录有什么区别" class="headerlink" title="一、mipmap 目录和drawable 目录有什么区别"></a>一、mipmap 目录和drawable 目录有什么区别</h3><p>Nexus 6 有 493 ppi，它刚好在 xxhdpi和xxxhdpi之间，所以显示的时候需要对xxxhdpi的资源进行缩小，如果你用了mipmap-xxxhdpi,那么这里会对sclae有一个优化，性能更好，占用内存更少。所以现在官方推荐使用mipmap：</p>
-<h3 id="二、setTranslucentStatus-方法"><a href="#二、setTranslucentStatus-方法" class="headerlink" title="二、setTranslucentStatus()方法"></a>二、setTranslucentStatus()方法</h3><p>在Android4.4之后使用沉浸式状态栏，需要用到这个方法</p></p>
-            <p class="article-more-link">
-                <a href="/2016/03/20/android-new-knowledge-summary/#more">Read More</a>
-            </p>
-        
-        </div>
-
-        <footer class="article-footer">
-          
-
-          <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://agehua.github.io/2016/03/20/android-new-knowledge-summary/" data-id="ckck40lgo000mx1vdaansbdvf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-          
-    
-        <a href="http://agehua.github.io/2016/03/20/android-new-knowledge-summary/#comments" class="article-comment-link">Comments</a>
     
 
 
@@ -1200,7 +1195,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/03/15/facebook-google+signin/" data-id="ckck40lfu0006x1vd3wock68m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/03/15/facebook-google+signin/" data-id="ckck4fnxu0064e5vdpvuukzf3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1358,7 +1353,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/03/01/android-googlemap-summary/" data-id="ckck40lg10007x1vd5uuejsmw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/03/01/android-googlemap-summary/" data-id="ckck4fnt0000je5vdggbncm7t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1605,7 +1600,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2015/11/06/book-list-of-2015/" data-id="ckck40lfa0002x1vdovqwdvad" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2015/11/06/book-list-of-2015/" data-id="ckck4fns70003e5vdcz7sppj2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1763,7 +1758,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2015/03/16/java-multithreading-concurrent/" data-id="ckck40lfs0005x1vdkikloq0u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2015/03/16/java-multithreading-concurrent/" data-id="ckck4fnsl0008e5vd2ohb5ktt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
