@@ -454,6 +454,11 @@
 
 <div id='toc-col' class="toc-col">
     
+          <div id='toc-wrap' class="toc-wrap">
+              <strong class="toc-title">文章目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio-CPU-Profiler使用"><span class="toc-number">1.</span> <span class="toc-text">Android Studio CPU Profiler使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-Profiler"><span class="toc-number">1.1.</span> <span class="toc-text">CPU Profiler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何获取-trace-数据"><span class="toc-number">1.2.</span> <span class="toc-text">如何获取 trace 数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何生成app启动过程中的-trace数据"><span class="toc-number">1.3.</span> <span class="toc-text">如何生成app启动过程中的 trace数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何使用CPU-Profiler-进行分析"><span class="toc-number">1.4.</span> <span class="toc-text">如何使用CPU Profiler 进行分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App启动流程分析"><span class="toc-number">1.5.</span> <span class="toc-text">App启动流程分析</span></a></li></ol></li></ol>
+          </div>
+    
 </div>
 </aside>
 
@@ -490,13 +495,13 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
             
             <section id="main">
-    <article id="post-JavaScript-knowledge" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Buildcross-platform-desktop-apps" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             
 	
-		<a href="/2017/10/22/JavaScript-knowledge/" itemprop="url">
-            <img src="http://cdn.conorlee.top/Bridge%20and%20Houses%20on%20the%20Corner%20of%20Herengracht-Prinsessegracht,%20The%20Hague.jpg" class="article-banner" />
+		<a href="/2017/10/22/Buildcross-platform-desktop-apps/" itemprop="url">
+            <img src="http://cdn.conorlee.top/Digger%203.jpg" class="article-banner" />
         </a>
 	
 
@@ -508,7 +513,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2017/10/22/JavaScript-knowledge/">JavaScript知识点积累</a>
+            <a class="article-title" href="/2017/10/22/Buildcross-platform-desktop-apps/">跨平台桌面程序开发</a>
         </h1>
     
 
@@ -517,7 +522,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/10/22/JavaScript-knowledge/">
+        <a href="/2017/10/22/Buildcross-platform-desktop-apps/">
             <time datetime="2017-10-21T16:00:00.000Z" itemprop="datePublished">2017-10-22</time>
         </a>
     </div>
@@ -532,25 +537,21 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/basic-knowledge/">Basic Knowledge</a>, <a class="tag-link" href="/tags/javascript/">JavaScript</a>
+        <a class="tag-link" href="/tags/alfred-workflow/">Alfred Workflow</a>, <a class="tag-link" href="/tags/electron/">Electron</a>, <a class="tag-link" href="/tags/javascript/">JavaScript</a>
     </div>
 
 
-                        <div style="color:#cba11f;float:right">18 min read , Words: 3594</div>                    </div>
+                        <div style="color:#cba11f;float:right">1 min read , Words: 161</div>                    </div>
                 
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h2 id="JavaScript积累"><a href="#JavaScript积累" class="headerlink" title="JavaScript积累"></a>JavaScript积累</h2><blockquote>
-<p>‘Java and JavaScript are similar like Car and Carpet are similar’ - Greg Hewgill</p>
-</blockquote>
-<p>本文大部分内容来自: <a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000" target="_blank" rel="noopener">廖雪峰–JavaScript教程</a></p>
-<h3 id="for-…-of循环介绍"><a href="#for-…-of循环介绍" class="headerlink" title="for … of循环介绍"></a>for … of循环介绍</h3><p>ES6引入了for … of循环遍历集合，你可能会有疑问，for … of循环和for … in循环有何区别？</p>
-<p>for … in循环由于历史遗留问题，它遍历的实际上是对象的属性名称。一个Array数组实际上也是一个对象，它的每个元素的索引被视为一个属性。</p></p>
+            <p><h2 id="跨平台桌面程序开发"><a href="#跨平台桌面程序开发" class="headerlink" title="跨平台桌面程序开发"></a>跨平台桌面程序开发</h2><p>今天搜索Alfred 英文词典应用时发现了这个工具：<br><a href="https://github.com/kaiye/workflows-youdao/" target="_blank" rel="noopener">Youdao Alfred Workflow</a></p>
+<p>作者在这篇文章：<a href="https://github.com/kaiye/kaiye.github.com/issues/5" target="_blank" rel="noopener">学英语和写工具</a>，里面介绍了Alfred插件开发，同时也介绍了一下跨平台插件开发的方式：</p></p>
             <p class="article-more-link">
-                <a href="/2017/10/22/JavaScript-knowledge/#more">Read More</a>
+                <a href="/2017/10/22/Buildcross-platform-desktop-apps/#more">Read More</a>
             </p>
         
         </div>
@@ -564,7 +565,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/10/22/JavaScript-knowledge/" data-id="ckcfwvp8k004iiyvd63c7fk7z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/10/22/Buildcross-platform-desktop-apps/" data-id="ckck40ll20040x1vds0nndawe" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -632,7 +633,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
           
     
-        <a href="http://agehua.github.io/2017/10/22/JavaScript-knowledge/#comments" class="article-comment-link">Comments</a>
+        <a href="http://agehua.github.io/2017/10/22/Buildcross-platform-desktop-apps/#comments" class="article-comment-link">Comments</a>
     
 
 
@@ -721,7 +722,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/09/21/PBOCKonwledgeCode/" data-id="ckcfwvp7s003liyvd89cu5367" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/09/21/PBOCKonwledgeCode/" data-id="ckck40lkq003px1vdm0qhb5v2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -880,7 +881,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/09/12/PBOCKonwledge/" data-id="ckcfwvp83003tiyvd7yrlj3fh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/09/12/PBOCKonwledge/" data-id="ckck40lkv003tx1vd1us2t2xf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1037,7 +1038,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/08/17/IntervieweeQuestions/" data-id="ckcfwvp870040iyvdpz29uquk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/08/17/IntervieweeQuestions/" data-id="ckck40lkl003mx1vdjck4iimd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1201,7 +1202,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/08/02/activity-start-process/" data-id="ckcfwvp7z003oiyvd65nlp1jv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/08/02/activity-start-process/" data-id="ckck40ll0003wx1vdfgifc9qs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1358,7 +1359,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/08/01/aosp-compile/" data-id="ckcfwvp7p003eiyvdm1uvs5qm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/08/01/aosp-compile/" data-id="ckck40lke003ix1vdbc0d4ics" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1518,7 +1519,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/07/12/android-noroot-hook/" data-id="ckcfwvp7r003iiyvdq8gc4xim" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/07/12/android-noroot-hook/" data-id="ckck40lka003gx1vdhqjpoisk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1680,7 +1681,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/07/10/android-binder-principle2/" data-id="ckcfwvp81003qiyvdl20lnsg9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/07/10/android-binder-principle2/" data-id="ckck40lk8003ex1vda66t7ahc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
