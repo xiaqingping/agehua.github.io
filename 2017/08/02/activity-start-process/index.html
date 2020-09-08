@@ -461,6 +461,11 @@
 
 <div id='toc-col' class="toc-col">
     
+          <div id='toc-wrap' class="toc-wrap">
+              <strong class="toc-title">文章目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity启动流程分析"><span class="toc-number">1.</span> <span class="toc-text">Activity启动流程分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要对象功能介绍"><span class="toc-number">1.1.</span> <span class="toc-text">主要对象功能介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#zygote进程和SystemServer进程"><span class="toc-number">1.1.1.</span> <span class="toc-text">zygote进程和SystemServer进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#与Activity启动有关的类"><span class="toc-number">1.1.2.</span> <span class="toc-text">与Activity启动有关的类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#App程序的入口"><span class="toc-number">1.1.3.</span> <span class="toc-text">App程序的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Instrumentation是什么？和ActivityThread是什么关系？"><span class="toc-number">1.1.4.</span> <span class="toc-text">Instrumentation是什么？和ActivityThread是什么关系？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简介AMS和ActivityThread之间的Binder通信"><span class="toc-number">1.1.5.</span> <span class="toc-text">简介AMS和ActivityThread之间的Binder通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IApplicationThread接口简介"><span class="toc-number">1.1.6.</span> <span class="toc-text">IApplicationThread接口简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充，通过Launcher启动Activity"><span class="toc-number">1.2.</span> <span class="toc-text">补充，通过Launcher启动Activity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">1.3.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
+          </div>
+    
 </div>
 </aside>
 
@@ -497,6 +502,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
             
             <section id="main"><article id="post-activity-start-process" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -807,7 +813,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/08/02/activity-start-process/" data-id="cketlr60y006j40vddr0y963i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/08/02/activity-start-process/" data-id="cketmkxaw003vrjvdlfxolze1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1221,7 +1227,6 @@ gitment.render('comments')
     }
 
 </script>
-
 
 
     </div>

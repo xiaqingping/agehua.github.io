@@ -490,163 +490,8 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
             
             <section id="main">
-    <article id="post-android-design-pattern-singleton" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            
-	
-		<a href="/2016/09/20/android-design-pattern-singleton/" itemprop="url">
-            <img src="http://cdn.conorlee.top/Blossoming%20Almond%20Tree.jpg" class="article-banner" />
-        </a>
-	
-
-
-
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/09/20/android-design-pattern-singleton/">ANDROID设计模式之单例模式</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/09/20/android-design-pattern-singleton/">
-            <time datetime="2016-09-19T16:00:00.000Z" itemprop="datePublished">2016-09-20</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/accumulation/">accumulation</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/android/">ANDROID</a>, <a class="tag-link" href="/tags/singleton/">Singleton</a>
-    </div>
-
-
-                        <div style="color:#cba11f;float:right">4 min read , Words: 727</div>                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>本文转载自<a href="http://stormzhang.com/designpattern/2016/03/27/android-design-pattern-singleton/" target="_blank" rel="noopener">stormzhang ANDROID设计模式之单例模式 </a>，内容稍有补充</p>
-<h3 id="常用单例模式"><a href="#常用单例模式" class="headerlink" title="常用单例模式"></a>常用单例模式</h3><p>什么是设计模式？其实简单的理解就是前人留下来的一些经验总结而已，然后把这些经验起了个名字叫Design Pattern，翻译过来就是设计模式的意思，通过使用设计模式可以让我们的代码复用性更高，可维护性更高，让你的代码写的更优雅。设计模式理论上有23种，但是我只会针对Android平台上常用的一些设计模式做分享，今天就先来分享下最常用的单例模式。</p></p>
-            <p class="article-more-link">
-                <a href="/2016/09/20/android-design-pattern-singleton/#more">Read More</a>
-            </p>
-        
-        </div>
-
-        <footer class="article-footer">
-          
-
-          <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://agehua.github.io/2016/09/20/android-design-pattern-singleton/" data-id="cketlr5vg001640vdkergucd4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-          
-    
-        <a href="http://agehua.github.io/2016/09/20/android-design-pattern-singleton/#comments" class="article-comment-link">Comments</a>
-    
-
-
-        </footer>
-
-    </div>
-    
-    <script>
-        pangu.spacingPage();
-    </script>
-
-
-</article>
-
-
-
-
     <article id="post-AVG-unwanted-software" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -717,7 +562,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/09/20/AVG-unwanted-software/" data-id="cketlr5vc001240vdwgzgz6or" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/09/20/AVG-unwanted-software/" data-id="cketmkx8w001arjvdym618l62" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -803,7 +648,165 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 
 
+    <article id="post-android-design-pattern-singleton" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2016/09/20/android-design-pattern-singleton/" itemprop="url">
+            <img src="http://cdn.conorlee.top/Blossoming%20Almond%20Tree.jpg" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/20/android-design-pattern-singleton/">ANDROID设计模式之单例模式</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/20/android-design-pattern-singleton/">
+            <time datetime="2016-09-19T16:00:00.000Z" itemprop="datePublished">2016-09-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/accumulation/">accumulation</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/android/">ANDROID</a>, <a class="tag-link" href="/tags/singleton/">Singleton</a>
+    </div>
+
+
+                        <div style="color:#cba11f;float:right">4 min read , Words: 727</div>                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>本文转载自<a href="http://stormzhang.com/designpattern/2016/03/27/android-design-pattern-singleton/" target="_blank" rel="noopener">stormzhang ANDROID设计模式之单例模式 </a>，内容稍有补充</p>
+<h3 id="常用单例模式"><a href="#常用单例模式" class="headerlink" title="常用单例模式"></a>常用单例模式</h3><p>什么是设计模式？其实简单的理解就是前人留下来的一些经验总结而已，然后把这些经验起了个名字叫Design Pattern，翻译过来就是设计模式的意思，通过使用设计模式可以让我们的代码复用性更高，可维护性更高，让你的代码写的更优雅。设计模式理论上有23种，但是我只会针对Android平台上常用的一些设计模式做分享，今天就先来分享下最常用的单例模式。</p></p>
+            <p class="article-more-link">
+                <a href="/2016/09/20/android-design-pattern-singleton/#more">Read More</a>
+            </p>
+        
+        </div>
+
+        <footer class="article-footer">
+          
+
+          <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://agehua.github.io/2016/09/20/android-design-pattern-singleton/" data-id="cketmkx9b001srjvdh0u965yh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+          
+    
+        <a href="http://agehua.github.io/2016/09/20/android-design-pattern-singleton/#comments" class="article-comment-link">Comments</a>
+    
+
+
+        </footer>
+
+    </div>
+    
+    <script>
+        pangu.spacingPage();
+    </script>
+
+
+</article>
+
+
+
+
     <article id="post-ThreadLocal-HandlerThread-Looper" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -874,7 +877,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/09/05/ThreadLocal-HandlerThread-Looper/" data-id="cketlr5vm001d40vdo1gg2lr4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/09/05/ThreadLocal-HandlerThread-Looper/" data-id="cketmkx8y001crjvdwgcylt3o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -961,6 +964,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 
     <article id="post-RxAndroid-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -1031,7 +1035,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/08/16/RxAndroid-Learning/" data-id="cketlr5v8000x40vd074h698b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/08/16/RxAndroid-Learning/" data-id="cketmkx8t0016rjvd9pjq968s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1118,6 +1122,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 
     <article id="post-android-LocationListener" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -1186,7 +1191,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/08/03/android-LocationListener/" data-id="cketlr5va001040vdehw1cbm3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/08/03/android-LocationListener/" data-id="cketmkx8l0013rjvdu2yxgju5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1273,6 +1278,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 
     <article id="post-android-webview-summary" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -1348,7 +1354,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/07/25/android-webview-summary/" data-id="cketlr5v2000u40vdnzn4tpei" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/07/25/android-webview-summary/" data-id="cketmkx8c000urjvd01epizdc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1435,6 +1441,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 
     <article id="post-gson-summary" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -1507,7 +1514,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/06/08/gson-summary/" data-id="cketlr5x8003a40vdtxwwfi5b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/06/08/gson-summary/" data-id="cketmkx86000prjvd5hum468s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1594,6 +1601,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 
     <article id="post-qiniu-android-summary" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -1664,7 +1672,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/05/28/qiniu-android-summary/" data-id="cketlr5v1000s40vd4ctds9zu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/05/28/qiniu-android-summary/" data-id="cketmkx89000rrjvdxethoz3j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -2037,7 +2045,6 @@ gitment.render('comments')
     }
 
 </script>
-
 
 
     </div>

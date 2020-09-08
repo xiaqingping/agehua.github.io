@@ -461,6 +461,11 @@
 
 <div id='toc-col' class="toc-col">
     
+          <div id='toc-wrap' class="toc-wrap">
+              <strong class="toc-title">文章目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">3.</span> <span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SimpleDateFormat为什么线程不安全"><span class="toc-number">3.1.</span> <span class="toc-text">SimpleDateFormat为什么线程不安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决方案"><span class="toc-number">3.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理"><span class="toc-number">4.</span> <span class="toc-text">实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Entry"><span class="toc-number">4.1.</span> <span class="toc-text">Entry</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ThreadLocalMap"><span class="toc-number">4.2.</span> <span class="toc-text">ThreadLocalMap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ThreadLocal-set-实现"><span class="toc-number">4.3.</span> <span class="toc-text">ThreadLocal.set()实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ThreadLocal-get-实现"><span class="toc-number">4.4.</span> <span class="toc-text">ThreadLocal.get() 实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Entry存入table数组如何实现的："><span class="toc-number">4.5.</span> <span class="toc-text">Entry存入table数组如何实现的：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Entry从table数组中取出"><span class="toc-number">4.6.</span> <span class="toc-text">Entry从table数组中取出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取当前的线程的threadLocals。"><span class="toc-number">4.7.</span> <span class="toc-text">获取当前的线程的threadLocals。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#table扩容"><span class="toc-number">4.8.</span> <span class="toc-text">table扩容</span></a></li></ol></li></ol>
+          </div>
+    
 </div>
 </aside>
 
@@ -497,6 +502,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
             
             <section id="main"><article id="post-ThreadLocal-usage" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -763,7 +769,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2016/12/11/ThreadLocal-usage/" data-id="cketlr5wd002840vd3nc934e7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2016/12/11/ThreadLocal-usage/" data-id="cketmkx9z002frjvdt5efbom5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1177,7 +1183,6 @@ gitment.render('comments')
     }
 
 </script>
-
 
 
     </div>

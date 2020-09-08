@@ -461,6 +461,11 @@
 
 <div id='toc-col' class="toc-col">
     
+          <div id='toc-wrap' class="toc-wrap">
+              <strong class="toc-title">文章目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景分析"><span class="toc-number">1.</span> <span class="toc-text">背景分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android中远程服务调用分析"><span class="toc-number">2.</span> <span class="toc-text">Android中远程服务调用分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-定义一个AIDL文件：Demo-aidl"><span class="toc-number">2.1.</span> <span class="toc-text">1.定义一个AIDL文件：Demo.aidl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-定义远程服务"><span class="toc-number">2.2.</span> <span class="toc-text">2.定义远程服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-本地创建连接对象"><span class="toc-number">2.3.</span> <span class="toc-text">3.本地创建连接对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、连接服务"><span class="toc-number">2.4.</span> <span class="toc-text">4、连接服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AIDL实现机制分析"><span class="toc-number">3.</span> <span class="toc-text">AIDL实现机制分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、AIDL接口必须实现IInterface接口"><span class="toc-number">3.1.</span> <span class="toc-text">1、AIDL接口必须实现IInterface接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、AIDL接口中肯定有一个静态实现类Stub"><span class="toc-number">3.2.</span> <span class="toc-text">2、AIDL接口中肯定有一个静态实现类Stub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、Stub类只是中间者，由Proxy类生成服务端的代理"><span class="toc-number">3.3.</span> <span class="toc-text">3、Stub类只是中间者，由Proxy类生成服务端的代理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析系统服务调用流程"><span class="toc-number">4.</span> <span class="toc-text">分析系统服务调用流程</span></a></li></ol>
+          </div>
+    
 </div>
 </aside>
 
@@ -497,6 +502,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
             
             <section id="main"><article id="post-android-binder-principle" class="article article-type-post" itemscope itemprop="blogPost">
+  
     <div class="article-inner">
         
             
@@ -760,7 +766,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2017/07/08/android-binder-principle/" data-id="cketlr5x5003340vdul4c5yqt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2017/07/08/android-binder-principle/" data-id="cketmkxah0037rjvd9t25dvat" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1174,7 +1180,6 @@ gitment.render('comments')
     }
 
 </script>
-
 
 
     </div>
