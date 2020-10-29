@@ -537,347 +537,18 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
     </div>
 
 
-                        <div style="color:#cba11f;float:right">17 min read , Words: 3218</div>                    </div>
+                        <div style="color:#cba11f;float:right">21 min read , Words: 4044</div>                    </div>
                 
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
         
-
-            <p>本文整理了一些 Kotlin 与 Java 语言的区别，方便从Java转型学习Kotlin的同学。</p>
-<h3 id="Kotlin-解决了一些-Java-中的问题"><a href="#Kotlin-解决了一些-Java-中的问题" class="headerlink" title="Kotlin 解决了一些 Java 中的问题"></a>Kotlin 解决了一些 Java 中的问题</h3><p>Kotlin 通过以下措施修复了 Java 中一系列长期困扰我们的问题：</p>
-<ul>
-<li>空引用由类型系统控制（可空类型与非空类型）(+)</li>
-<li>无原始类型(+)</li>
-<li>Kotlin 中数组是不型变的(++)</li>
-<li>相对于 Java 的 SAM(Single Abstract Method)-转换，Kotlin 有更合适的函数类型(+++)</li>
-<li>没有通配符的使用处型变(++)</li>
-<li>Kotlin 没有受检异常(+)<h3 id="Java-有而-Kotlin-没有的东西"><a href="#Java-有而-Kotlin-没有的东西" class="headerlink" title="Java 有而 Kotlin 没有的东西"></a>Java 有而 Kotlin 没有的东西</h3></li>
-<li>受检异常</li>
-<li>原始类型 —— 字节码会尽可能试用原生类型，但不是显式可用的。</li>
-<li>静态成员 —— 以 伴生对象、 顶层函数、 扩展函数 或者 @JvmStatic 取代。</li>
-<li>通配符类型 —— 以 声明处协变 与 类型投影 取代。</li>
-<li>三目操作符 <code>a ? b : c</code> —— 以 <code>if</code> 表达式取代<h3 id="Kotlin-有而-Java-没有的东西"><a href="#Kotlin-有而-Java-没有的东西" class="headerlink" title="Kotlin 有而 Java 没有的东西"></a>Kotlin 有而 Java 没有的东西</h3></li>
-<li>Lambda 表达式 + 内联函数 = 高性能自定义控制结构(++)</li>
-<li>扩展函数</li>
-<li>空安全</li>
-<li>智能类型转换</li>
-<li>字符串模板</li>
-<li>类的属性</li>
-<li>主构造函数</li>
-<li>委托</li>
-<li>变量与属性类型的类型推断</li>
-<li>单例</li>
-<li>声明处型变 &amp; 类型投影</li>
-<li>区间表达式 <code>in a...b step 2</code></li>
-<li>操作符重载 <code>operator</code>关键字</li>
-<li>伴生对象 <code>companion</code></li>
-<li>数据类 <code>data class A</code></li>
-<li>密封类 <code>sealed class A</code></li>
-<li>分离用于只读与可变集合的接口 <code>MutableList, MutableSet, MutableMap</code></li>
-<li>协程</li>
-</ul>
-<h3 id="空安全"><a href="#空安全" class="headerlink" title="空安全"></a>空安全</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">var a: String = <span class="string">"abc"</span> <span class="comment">// 默认情况下，常规初始化意味着非空</span></span><br><span class="line">a = <span class="keyword">null</span> <span class="comment">// 编译错误</span></span><br><span class="line"></span><br><span class="line">var b: String? = <span class="string">"abc"</span> <span class="comment">// 可以设置为空</span></span><br><span class="line">b = <span class="keyword">null</span> <span class="comment">// ok</span></span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line">val l = b.length <span class="comment">// 错误：变量“b”可能为空</span></span><br></pre></td></tr></table></figure>
-<p>但是我们还是需要访问该属性，对吧？有几种方式可以做到</p>
-<h4 id="在条件中检测-null"><a href="#在条件中检测-null" class="headerlink" title="在条件中检测 null"></a>在条件中检测 null</h4><p>首先，可以显式检测 b 是否为 null，并分别处理两种可能：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val l = <span class="keyword">if</span> (b != <span class="keyword">null</span>) b.length <span class="keyword">else</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="安全的调用"><a href="#安全的调用" class="headerlink" title="安全的调用"></a>安全的调用</h4><p>第二个选择是安全调用操作符，写作 <code>?.</code><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val a = <span class="string">"Kotlin"</span></span><br><span class="line">val b: String? = <span class="keyword">null</span></span><br><span class="line">println(b?.length)</span><br><span class="line">println(a?.length) <span class="comment">// 无需安全调用</span></span><br></pre></td></tr></table></figure></p>
-<p>如果 b 非空，就返回 b.length，否则返回 null，这个表达式的类型是 <code>Int?</code>。</p>
-<p>对集合，如果要只对非空值执行某个操作，安全调用操作符可以与 let 一起使用：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val listWithNulls: List&lt;String?&gt; = listOf(<span class="string">"Kotlin"</span>, <span class="keyword">null</span>)</span><br><span class="line"><span class="keyword">for</span> (item in listWithNulls) &#123;</span><br><span class="line">    item?.let &#123; println(it) &#125; <span class="comment">// 输出 Kotlin 并忽略 null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>安全调用也可以出现在赋值的左侧。这样，如果调用链中的任何一个接收者为空都会跳过赋值，而右侧的表达式根本不会求值：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果 `person` 或者 `person.department` 其中之一为空，都不会调用该函数：</span></span><br><span class="line">person?.department?.head = managersPool.getManager()</span><br></pre></td></tr></table></figure></p>
-<h4 id="Elvis-操作符"><a href="#Elvis-操作符" class="headerlink" title="Elvis 操作符"></a>Elvis 操作符</h4><p>当我们有一个可空的引用 b 时，我们可以说“如果 b 非空，我使用它；否则使用某个非空的值”：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val l: Int = <span class="keyword">if</span> (b != <span class="keyword">null</span>) b.length <span class="keyword">else</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<p>除了完整的 if-表达式，这还可以通过 Elvis 操作符表达，写作 <code>?:</code>：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val l = b?.length ?: -<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<p>如果 ?: 左侧表达式非空，elvis 操作符就返回其左侧表达式，否则返回右侧表达式。 请注意，当且仅当左侧为空时，才会对右侧表达式求值。</p>
-<h4 id="操作符"><a href="#操作符" class="headerlink" title="!! 操作符"></a>!! 操作符</h4><p>第三种选择是为 NPE 爱好者准备的：非空断言运算符（<code>!!</code>）将任何值转换为非空类型，若该值为空则抛出异常。我们可以写 b!! ，这会返回一个非空的 b 值 （例如：在我们例子中的 String）或者如果 b 为空，就会抛出一个 NPE 异常：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val l = b!!.length</span><br></pre></td></tr></table></figure></p>
-<h4 id="安全的类型转换"><a href="#安全的类型转换" class="headerlink" title="安全的类型转换"></a>安全的类型转换</h4><p>如果对象不是目标类型，那么常规类型转换可能会导致 ClassCastException。 另一个选择是使用安全的类型转换，如果尝试转换不成功则返回 null：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val aInt: Int? = a as? Int</span><br></pre></td></tr></table></figure></p>
-<h4 id="可空类型的集合"><a href="#可空类型的集合" class="headerlink" title="可空类型的集合"></a>可空类型的集合</h4><p>如果你有一个可空类型元素的集合，并且想要过滤非空元素，你可以使用 filterNotNull 来实现：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val nullableList: List&lt;Int?&gt; = listOf(<span class="number">1</span>, <span class="number">2</span>, <span class="keyword">null</span>, <span class="number">4</span>)</span><br><span class="line">val intList: List&lt;Int&gt; = nullableList.filterNotNull()</span><br></pre></td></tr></table></figure></p>
-<h3 id="kotlin无原始类型"><a href="#kotlin无原始类型" class="headerlink" title="kotlin无原始类型"></a>kotlin无原始类型</h3><p>在 Kotlin 中，所有东西都是对象，在这个意义上讲我们可以在任何变量上调用成员函数与属性。 一些类型可以有特殊的内部表示——例如，数字、字符以及布尔值可以在运行时表示为原生类型值，但是对于用户来说，它们看起来就像普通的类<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val b: Byte = <span class="number">1</span></span><br><span class="line">val c:Double = b.toDouble()</span><br></pre></td></tr></table></figure></p>
-<h3 id="Kotlin-中数组是不型变的"><a href="#Kotlin-中数组是不型变的" class="headerlink" title="Kotlin 中数组是不型变的"></a>Kotlin 中数组是不型变的</h3><p>我们可以使用库函数 arrayOf() 来创建一个数组并传递元素值给它，这样 arrayOf(1, 2, 3) 创建了 array [1, 2, 3]。 或者，库函数 arrayOfNulls() 可以用于创建一个指定大小的、所有元素都为空的数组。</p>
-<p>Kotlin 中数组是不型变的（invariant）。这意味着 Kotlin 不让我们把 <code>Array&lt;String&gt;</code>赋值给 <code>Array&lt;Any&gt;</code>，以防止可能的运行时失败。</p>
-<blockquote>
-<p>但是你可以使用 <code>Array&lt;out Any&gt;</code>, out 关键字为，使用处型变：类型投影</p>
-</blockquote>
-<h3 id="类型投影"><a href="#类型投影" class="headerlink" title="类型投影"></a>类型投影</h3><p>关键字是 <code>in</code> 和 <code>out</code>.<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">copy</span><span class="params">(from: Array&lt;out Any&gt;, to: Array&lt;Any&gt;)</span> </span>&#123; …… &#125;</span><br></pre></td></tr></table></figure></p>
-<p>简单介绍下，这里 out 修饰的数组只能调用 get()，对应于 Java 的 Array&lt;? extends Object&gt;。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">fill</span><span class="params">(dest: Array&lt;in String&gt;, value: String)</span> </span>&#123; …… &#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>Array&lt;in String&gt;</code> 对应于 Java 的 Array&lt;? super String&gt;，也就是说，你可以传递一个 CharSequence 数组或一个 Object 数组给 fill() 函数。</p>
-<h3 id="Kotlin与java8的SAM转换对比"><a href="#Kotlin与java8的SAM转换对比" class="headerlink" title="Kotlin与java8的SAM转换对比"></a>Kotlin与java8的SAM转换对比</h3><p>只有一个抽象方法的接口称为函数式接口或 SAM（Single Abstract Method 单一抽象方法）接口。函数式接口可以有多个非抽象成员，但只能有一个抽象成员。<br>SAM 实际上这是java8中提出的概念，你就把他理解为是只有一个抽象方法的接口的就可以了</p>
-<p>可以用 fun 修饰符在 Kotlin 中声明一个函数式接口。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">fun <span class="class"><span class="keyword">interface</span> <span class="title">KRunnable</span> </span>&#123;</span><br><span class="line">   <span class="function">fun <span class="title">invoke</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="SAM-转换"><a href="#SAM-转换" class="headerlink" title="SAM 转换"></a>SAM 转换</h4><p>对于函数式接口，可以通过 lambda 表达式实现 SAM 转换，从而使代码更简洁、更有可读性。</p>
-<p>使用 lambda 表达式可以替代手动创建实现函数式接口的类。 通过 SAM 转换， Kotlin 可以将其签名与接口的单个抽象方法的签名匹配的任何 lambda 表达式转换为实现该接口的类的实例。<br>例如，有这样一个 Kotlin 函数式接口：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">fun <span class="class"><span class="keyword">interface</span> <span class="title">IntPredicate</span> </span>&#123;</span><br><span class="line">   <span class="function">fun <span class="title">accept</span><span class="params">(i: Int)</span>: Boolean</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>如果不使用 SAM 转换，那么你需要像这样编写代码：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建一个类的实例</span></span><br><span class="line">val isEven = object : IntPredicate &#123;</span><br><span class="line">   <span class="function">override fun <span class="title">accept</span><span class="params">(i: Int)</span>: Boolean </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> i % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过利用 Kotlin 的 SAM 转换，可以改为以下等效代码：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 通过 lambda 表达式创建一个实例</span></span><br><span class="line">val isEven = IntPredicate &#123; it % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure></p>
-<p>可以通过更短的 lambda 表达式替换所有不必要的代码。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">fun <span class="class"><span class="keyword">interface</span> <span class="title">IntPredicate</span> </span>&#123;</span><br><span class="line">   <span class="function">fun <span class="title">accept</span><span class="params">(i: Int)</span>: Boolean</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function">​</span></span><br><span class="line"><span class="function">val isEven </span>= IntPredicate &#123; it % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br><span class="line">​</span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   println(<span class="string">"Is 7 even? - $&#123;isEven.accept(7)&#125;"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>再看一个开发中用到的代码：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ExecutorService executorService= Executors.newScheduledThreadPool(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">    executorService.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"hello world"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>用下面的java8中的lambda 来写 也是可以的。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">executorService.execute(()-&gt;System.out.println(<span class="string">"hello world"</span>));</span><br></pre></td></tr></table></figure></p>
-<p>kotlin中的lambda 这里可以这么写<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val executorService: ExecutorService = Executors.newScheduledThreadPool(<span class="number">3</span>)</span><br><span class="line"><span class="comment">//kotlin中的 匿名内部类的标准写法</span></span><br><span class="line">executorService.submit(object :Runnable&#123; <span class="comment">// object 作为关键字，这里代表对象表示</span></span><br><span class="line">    <span class="function">override fun <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello world"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 使用lambda表达式的精简写法</span></span><br><span class="line">executorService.submit &#123; System.out.println(<span class="string">"hello world"</span>) &#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个kotlin的lambda的类型就是 <code>()-&gt;Unit</code> 是一个没有参数也没有返回值的类型</p>
-<p>kotlin编译器遇到上面的代码，实际上是帮我们生成了一个函数：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">Runnable</span><span class="params">(block:()</span> -&gt; Unit):Runnable </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> object: Runnable &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            block()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个Runnable函数的意思是接收一个方法，别名是 block，返回一个Runnable对象，并在Runnable对象的run方法中，调用 block 方法。这里的 <code>()-&gt;Unit</code> 是一个kotlin函数类型</p>
-<h4 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h4><p>Kotlin 使用类似 <code>(Int) -&gt; String</code> 的一系列函数类型来处理函数的声明.</p>
-<p>这些类型具有与函数签名相对应的特殊表示法，即它们的参数和返回值：</p>
-<ul>
-<li><p>所有函数类型都有一个圆括号括起来的参数类型列表以及一个返回类型：<code>(A, B) -&gt; C</code>表示接受类型分别为 A 与 B 两个参数并返回一个 C 类型值的函数类型。 参数类型列表可以为空，如 () -&gt; A。Unit 返回类型不可省略。</p>
-</li>
-<li><p>函数类型可以有一个额外的接收者类型，它在表示法中的点之前指定： 类型 <code>A.(B) -&gt; C</code> 表示可以在 A 的接收者对象上以一个 B 类型参数来调用并返回一个 C 类型值的函数。 带有接收者的函数字面值通常与这些类型一起使用。 </p>
-</li>
-<li><p>挂起函数属于特殊种类的函数类型，它的表示法中有一个 suspend 修饰符 ，例如 <code>suspend () -&gt; Unit</code>或者 <code>suspend A.(B) -&gt; C</code>。</p>
-</li>
-</ul>
-<p>函数类型表示法可以选择性地包含函数的参数名：<code>(x: Int, y: Int) -&gt; Point</code>。 这些名称可用于表明参数的含义。</p>
-<ul>
-<li>如需将函数类型指定为可空，请使用圆括号：<code>((Int, Int) -&gt; Int)?</code>。</li>
-<li>函数类型可以使用圆括号进行接合：<code>(Int) -&gt; ((Int) -&gt; Unit)</code></li>
-<li>箭头表示法是右结合的，<code>(Int) -&gt; (Int) -&gt; Unit</code> 与前述示例等价，但不等于 <code>((Int) -&gt; (Int)) -&gt; Unit</code>。</li>
-</ul>
-<p>还可以通过使用类型别名给函数类型起一个别称：</p>
-<ul>
-<li>typealias ClickHandler = (Button, ClickEvent) -&gt; Unit</li>
-</ul>
-<h4 id="函数类型实例化及调用"><a href="#函数类型实例化及调用" class="headerlink" title="函数类型实例化及调用"></a>函数类型实例化及调用</h4><ul>
-<li><p>使用 lambda 表达式或匿名函数进行实例化</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">var onItemClick:(Int, String) -&gt; Unit = &#123; a:Int, b:String -&gt;</span><br><span class="line">    Log.e(<span class="string">"AAA"</span>, <span class="string">"aaa$a$b"</span>) <span class="comment">// 配合lambda表达式</span></span><br><span class="line">&#125;</span><br><span class="line">onItemClick.invoke(<span class="number">1</span>, <span class="string">"2"</span>)</span><br><span class="line">onItemClick(<span class="number">1</span>, <span class="string">"2"</span>) <span class="comment">// 这两种方式都可以</span></span><br><span class="line"></span><br><span class="line">val f:(Int, String) -&gt; String = fun(a:Int, b:String):String &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"aaa$a$b"</span>  <span class="comment">// 使用匿名函数进行实例化</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.invoke(<span class="number">1</span>, <span class="string">"2"</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用实现函数类型接口的自定义类的实例。下例中可直接使用 Test()(111) </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">private class Test:(Int)-&gt;String&#123;</span><br><span class="line">    <span class="function">override fun <span class="title">invoke</span><span class="params">(p1: Int)</span>: String </span>= <span class="string">"$p1 xxxx"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数引用及属性引用</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val intPlus: Int.(Int) -&gt; Int = Int::plus</span><br><span class="line"><span class="comment">// 下面三种方式都可以使用</span></span><br><span class="line">intPlus.invoke(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">intPlus(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">2</span>.intPlus(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p> <code>::</code> 表示创建一个函数成员引用或者一个类引用</p>
-</blockquote>
-<ul>
-<li>函数引用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">isOdd</span><span class="params">(x: Int)</span> </span>= x % <span class="number">2</span> != <span class="number">0</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>我们可以很容易地直接调用它（isOdd(5)），但是我们也可以将其作为一个函数类型的值，例如将其传给另一个函数。为此，我们使用 :: 操作符：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val numbers = listOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">println(numbers.filter(::isOdd))</span><br></pre></td></tr></table></figure></p>
-<p>这里 <code>::isOdd</code> 是函数类型 <code>(Int) -&gt; Boolean</code> 的一个值。</p>
-<p>等同于下面使用形参odd的方式<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val odd:(x: Int) -&gt; Boolean = &#123;x:Int -&gt;</span><br><span class="line">    x % <span class="number">2</span> != <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line">val numbers = listOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">println(numbers.filter(odd))</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>类引用<br>最基本的反射功能是获取 Kotlin 类的运行时引用。要获取对静态已知的 Kotlin 类的引用，可以使用 类字面值 语法：<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val c = MyClass::<span class="class"><span class="keyword">class</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>该引用是 KClass 类型的值。</p>
-<p>请注意，Kotlin 类引用与 Java 类引用不同。要获得 Java 类引用， 请在 KClass 实例上使用 <code>.java</code> 属性<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val d = MyClass::<span class="class"><span class="keyword">class</span>.<span class="title">java</span></span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Kotlin中的异常"><a href="#Kotlin中的异常" class="headerlink" title="Kotlin中的异常"></a>Kotlin中的异常</h3><p>Kotlin 中所有异常类都是 Throwable 类的子孙类。 每个异常都有消息、堆栈回溯信息以及可选的原因</p>
-<h4 id="try-是一个表达式，即它可以有一个返回值："><a href="#try-是一个表达式，即它可以有一个返回值：" class="headerlink" title="try 是一个表达式，即它可以有一个返回值："></a>try 是一个表达式，即它可以有一个返回值：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">val a: Int? = <span class="keyword">try</span> &#123; parseInt(input) &#125; <span class="keyword">catch</span> (e: NumberFormatException) &#123; <span class="keyword">null</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>try-表达式的返回值是 try 块中的最后一个表达式或者是（所有）catch 块中的最后一个表达式。 finally 块中的内容不会影响表达式的结果</p>
-<h4 id="受检的异常"><a href="#受检的异常" class="headerlink" title="受检的异常"></a>受检的异常</h4><p>受检查异常要用 try-catch 捕获，要么抛出，否则会发生编译错误。而 kotlin 中没有受检查异常，所有异常都是运行时异常，即便是原本在 Java 中的受检查异常，在 kotlin 中也是运行时异常，例如：IOException 在 Java 中是受检查异常，在 kotlin 中是运行时异常。</p>
-<p>以下是 JDK 中 StringBuilder 类实现的一个示例接口：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">readNumber</span><span class="params">(BufferedReader reader)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    String line = reader.readLine(); <span class="comment">// 这里要么在方法声明上抛出，要么在内部捕获处理，否则无法编译通过</span></span><br><span class="line">    result = Integer.parseInt(line);</span><br><span class="line">    reader.close();</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这并不好，参见《Effective Java》第三版 第 77 条：不要忽略异常。</p>
-<blockquote>
-<p>通过一些小程序测试得出的结论是异常规范会同时提高开发者的生产力与代码质量，但是大型软件项目的经验表明一个不同的结论——生产力降低、代码质量很少或没有提高。</p>
-</blockquote>
-<h3 id="kotlin实现静态成员的方式"><a href="#kotlin实现静态成员的方式" class="headerlink" title="kotlin实现静态成员的方式"></a>kotlin实现静态成员的方式</h3><p>在 kotin 语言中其实没有 java static 的这个概念，基本都是用一个静态对象来模拟 class 的静态属性和方法，目前有4种实现方式：</p>
-<h4 id="伴生对象——声明单例的方式"><a href="#伴生对象——声明单例的方式" class="headerlink" title="伴生对象——声明单例的方式"></a>伴生对象——声明单例的方式</h4><p>类内部的对象声明可以用 <code>companion</code> 关键字标记，这样它就与外部类关联在一起，我们就可以直接通过外部类访问到对象的内部元素。<br>即可以声明属性，也可以声明方法，kotlin 中的调用方式感觉和 java 的 static 一样<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookKotlin</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    var name: String = <span class="string">"AA"</span></span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">speak</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    companion object instance &#123;</span><br><span class="line">        var nameStatic: String = <span class="string">"BB"</span></span><br><span class="line">        <span class="function">fun <span class="title">speakStatic</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用方式为：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BookKotlin.nameStatic</span><br><span class="line">BookKotlin.speakStatic()</span><br></pre></td></tr></table></figure></p>
-<p>将kotlin代码转为java代码后，调用方式如下：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BookKotlin.instance.getNameStatic()</span><br><span class="line">BookKotlin.instance.setNameStatic(String s)</span><br><span class="line">BookKotlin.instance.speakStatic()</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>注意：一个类里面只能声明一个内部关联对象，即关键字 companion 只能使用一次。</p>
-</blockquote>
-<p>kotlin 中所有的成员变量，不管是不是 static 的都有 get/set 方法，另外 kotlin 并没有把我们声明的静态参数和方法声明成 static 的，而是通过 instance 这个静态对象中转使用的</p>
-<h4 id="JvmField-JvmStatic-注解"><a href="#JvmField-JvmStatic-注解" class="headerlink" title="@JvmField + @JvmStatic 注解"></a>@JvmField + @JvmStatic 注解</h4><p>声明成员和方法使用 JVM 提供的特性</p>
-<ul>
-<li>@JvmField - 修饰静态变量</li>
-<li>@JvmStatic - 修饰静态方法</li>
-<li>@JvmField 和 @JvmStatic 只能写在 object 修饰的类或者 companion object 里，写法虽然有些别扭，但是效果是真的是按 static 来实现的</li>
-</ul>
-<p>修改一下上面代码：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookKotlin</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    companion object &#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@JvmField</span></span><br><span class="line">        var nameStatic: String = <span class="string">"BB"</span></span><br><span class="line"></span><br><span class="line">        <span class="meta">@JvmStatic</span></span><br><span class="line">        <span class="function">fun <span class="title">speakStatic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var name: String = <span class="string">"AA"</span></span><br><span class="line">    <span class="function">fun <span class="title">speak</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="object-单例"><a href="#object-单例" class="headerlink" title="object 单例"></a>object 单例</h4><p>kotlin 自身提供了一种单例实现方式：object ，直接用来修饰 class ，用 object 修饰的类不能 new 对象，只能使用 object 提供的单例<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">object BookKotlin &#123;</span><br><span class="line"></span><br><span class="line">    var name: String = <span class="string">"AA"</span></span><br><span class="line">    <span class="function">fun <span class="title">speak</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Kotlin中使用如下：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BookKotlin.name</span><br><span class="line">BookKotlin.speak()</span><br></pre></td></tr></table></figure></p>
-<h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>const 写在 class 外面，效果 = @JvmField，但是不能修饰方法，也不能和 @JvmField 混用，一般就是用来声明常用值的，用处不多，而且只能用 val ，var 不行，想要修饰方法的话，不写 const 就行<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> val name: String = <span class="string">"AA"</span></span><br><span class="line"><span class="function">fun <span class="title">adk</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookKotlin</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">speak</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="kotlin没有三目运算符"><a href="#kotlin没有三目运算符" class="headerlink" title="kotlin没有三目运算符"></a>kotlin没有三目运算符</h3><p>用表达式<code>if() ... else ...</code> 或 <code>if () ... else if () ... else ...</code> 代替</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">var number = <span class="keyword">if</span>(n&gt;<span class="number">0</span>) <span class="string">"Positive"</span> <span class="keyword">else</span> <span class="keyword">if</span>(n&lt;<span class="number">0</span>) <span class="string">"Negative"</span> <span class="keyword">else</span> <span class="string">"Zero"</span></span><br><span class="line"><span class="comment">// 这一行比三元运算符简单得多，可读性也更强</span></span><br></pre></td></tr></table></figure>
-<h3 id="Kotlin内联函数"><a href="#Kotlin内联函数" class="headerlink" title="Kotlin内联函数"></a>Kotlin内联函数</h3><p>Java 方法执行的内存模型是基于 Java 虚拟机栈的：每个方法被执行的时候都会创建一个栈帧（Stack Frame），用于存储局部变量表、操作数栈、动态链接、方法出口等信息。每一个方法被调用直至执行完成的过程，就对应着一个栈帧入栈、出栈的过程。<br>也就是说每调用一个方法，都会对应一个栈帧的入栈出栈过程，如果你有一个工具类方法，在某个循环里调用很多次，那就会对应很多次的栈帧入栈、出栈过程。这里首先要记住的一点是，栈帧的创建及入栈、出栈都是有性能损耗的。下面以一个例子来说明，看段代码片段：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//多次调用 sum() 方法进行求和运算</span></span><br><span class="line">    println(sum(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line">    println(sum(<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>))</span><br><span class="line">    println(sum(<span class="number">12</span>, <span class="number">34</span>))</span><br><span class="line">    <span class="comment">//....可能还有若干次</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">sum</span><span class="params">(vararg ints: Int)</span>: Int </span>&#123;</span><br><span class="line">    var sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (i in ints) &#123;</span><br><span class="line">        sum += i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在测试方法 test() 里，我们多次调用了 sum() 方法。为了避免多次调用 sum() 方法带来的性能损耗，我们期望的代码类似这样子的：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    var sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="function">i in <span class="title">arrayOf</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span>) </span>&#123;</span><br><span class="line">        sum += i            </span><br><span class="line">    &#125;</span><br><span class="line">    println(sum)</span><br><span class="line">    </span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="function">i in <span class="title">arrayOf</span><span class="params">(<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>)</span>) </span>&#123;</span><br><span class="line">        sum += i            </span><br><span class="line">    &#125;</span><br><span class="line">    println(sum)</span><br><span class="line">    </span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="function">i in <span class="title">arrayOf</span><span class="params">(<span class="number">12</span>, <span class="number">34</span>)</span>) </span>&#123;</span><br><span class="line">        sum += i            </span><br><span class="line">    &#125;</span><br><span class="line">    println(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3次数据求和操作，都是在 test() 方法里执行的，没有之前的 sum() 方法调用，最后的结果依然是一样的，但是由于减少了方法调用，虽然代码量增加了，但是性能确提升了。那么怎么实现这种情况呢，一般工具类有很多公共方法，我总不能在需要调用这些公共方法的地方，把代码复制一遍吧，内联就是为了解决这一问题。</p>
-<p>定义内联函数：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">inline fun <span class="title">sum</span><span class="params">(vararg ints: Int)</span>: Int </span>&#123;</span><br><span class="line">    var sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (i in ints) &#123;</span><br><span class="line">        sum += i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如上所示，用关键字 inline 标记函数，该函数就是一个内联函数。还是原来的 test() 方法，编译器在编译的时候，会自动把内联函数 sum() 方法体内的代码，替换到调用该方法的地方。查看编译后的字节码，会发现 test() 方法里已经没了对 sum() 方法的调用，凡是原来代码里出现 sum() 方法调用的地方，出现的都是 sum() 方法体内的字节码了。</p>
-<blockquote>
-<p>注意，内联可能导致生成的代码增加；不过如果我们使用得当（即避免内联过大函数），性能上会有所提升，尤其是在循环中的“超多态（megamorphic）”调用处。</p>
-</blockquote>
-<h4 id="禁用内联"><a href="#禁用内联" class="headerlink" title="禁用内联"></a>禁用内联</h4><p>如果一个内联函数的参数里包含 lambda表达式，也就是函数参数，那么该形参也是 inline 的，举个例子：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">inline fun <span class="title">test</span><span class="params">(inlined: ()</span> -&gt; Unit) </span>&#123;...&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里有个问题需要注意，如果在内联函数的内部，函数参数被其他非内联函数调用，就会报错，如下所示：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//内联函数</span></span><br><span class="line"><span class="function">inline fun <span class="title">test</span><span class="params">(inlined: ()</span> -&gt; Unit) </span>&#123;</span><br><span class="line">    <span class="comment">//这里会报错</span></span><br><span class="line">    otherNoinlineMethod(inlined)   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//非内联函数</span></span><br><span class="line"><span class="function">fun <span class="title">otherNoinlineMethod</span><span class="params">(oninline: ()</span> -&gt; Unit) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>要解决这个问题，必须为内联函数的参数加上 noinline 修饰，表示禁止内联，保留原有函数的特性，所以 test() 方法正确的写法应该是：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">inline fun <span class="title">test</span><span class="params">(noinline inlined: ()</span> -&gt; Unit) </span>&#123;</span><br><span class="line">    otherNoinlineMethod(inlined)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>注意，如果一个内联函数没有可内联的函数参数并且没有具体化的类型参数，编译器会产生一个警告，因为内联这样的函数很可能并无益处（如果你确认需要内联，则可以用 @Suppress(“NOTHING_TO_INLINE”) 注解关掉该警告</p>
-</blockquote>
-<h4 id="非局部返回"><a href="#非局部返回" class="headerlink" title="非局部返回"></a>非局部返回</h4><p>在 Kotlin 中，我们只能对具名或匿名函数使用正常的、非限定的 return 来退出。 这意味着要退出一个 lambda 表达式，我们必须使用一个标签，并且在 lambda 表达式内部禁止使用裸 return，因为 lambda 表达式不能使包含它的函数返回：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    innerFun &#123;      </span><br><span class="line">        <span class="comment">//return 会报错，非局部返回，直接退出 test() 函数。</span></span><br><span class="line">        <span class="keyword">return</span><span class="meta">@innerFun</span>     <span class="comment">//局部返回，只退出 innerFun() 函数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//以下代码依旧会执行</span></span><br><span class="line">    println(<span class="string">"test..."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">innerFun</span><span class="params">(a: ()</span> -&gt; Unit) </span>&#123;</span><br><span class="line">    a()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>非局部返回我的理解就是返回到顶层函数，如上面代码中所示，默认情况下是不能直接 return 的，但是内联函数确是可以的。所以改成下面这个样子<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    innerFun &#123;      </span><br><span class="line">        <span class="keyword">return</span> <span class="comment">//非局部返回，直接退出 test() 函数。</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下代码不会执行</span></span><br><span class="line">    println(<span class="string">"test..."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">inline fun <span class="title">innerFun</span><span class="params">(a: ()</span> -&gt; Unit) </span>&#123;</span><br><span class="line">    a()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>也就是说内联函数的函数参数在调用时，可以非局部返回，如上所示。那么 crossinline 修饰的 lambda 参数，可以禁止内联函数调用时非局部返回。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    innerFun &#123;      </span><br><span class="line">        <span class="keyword">return</span> <span class="comment">//这里这样会报错，只能 return@innerFun</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下代码不会执行</span></span><br><span class="line">    println(<span class="string">"test..."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">inline fun <span class="title">innerFun</span><span class="params">(crossinline a: ()</span> -&gt; Unit) </span>&#123;</span><br><span class="line">    a()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="具体化的类型参数"><a href="#具体化的类型参数" class="headerlink" title="具体化的类型参数"></a>具体化的类型参数</h4><p>有时候我们需要访问一个作为参数传给我们的一个类型：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">fun &lt;T&gt; TreeNode.findParentOfType(clazz: Class&lt;T&gt;): T? &#123;</span><br><span class="line">    var p = parent</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span> &amp;&amp; !clazz.isInstance(p)) &#123;</span><br><span class="line">        p = p.parent</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Suppress</span>(<span class="string">"UNCHECKED_CAST"</span>)</span><br><span class="line">    <span class="keyword">return</span> p as T?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在这里我们向上遍历一棵树并且检测每个节点是不是特定的类型。 这都没有问题，但是调用处不是很优雅：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">treeNode.findParentOfType(MyTreeNode::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br></pre></td></tr></table></figure></p>
-<p>我们真正想要的只是传一个类型给该函数，即像这样调用它：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">treeNode.findParentOfType&lt;MyTreeNode&gt;()</span><br></pre></td></tr></table></figure></p>
-<p>为能够这么做，内联函数支持具体化的类型参数，于是我们可以这样写：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">inline fun &lt;reified T&gt; TreeNode.findParentOfType(): T? &#123;</span><br><span class="line">    var p = parent</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span> &amp;&amp; p !is T) &#123;</span><br><span class="line">        p = p.parent</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p as T?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们使用 reified 修饰符来限定类型参数，现在可以在函数内部访问它了， 几乎就像是一个普通的类一样。由于函数是内联的，不需要反射，正常的操作符如 !is 和 as 现在都能用了。此外，我们还可以按照上面提到的方式调用它：<code>myTree.findParentOfType&lt;MyTreeNodeType&gt;()</code>。</p>
-<p>再举个栗子：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">inline fun &lt;reified T: Activity&gt; startActivity() &#123;</span><br><span class="line">    startActivity(Intent(<span class="keyword">this</span>, T::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>))</span></span><br><span class="line"><span class="class">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>使用时直接传入泛型即可，代码简洁明了：<br><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">startActivity&lt;MainActivity&gt;()</span><br></pre></td></tr></table></figure></p>
-<h3 id="扩展函数"><a href="#扩展函数" class="headerlink" title="扩展函数"></a>扩展函数</h3><p>扩展函数可以在已有类中添加新的方法，不会对原类做修改，扩展函数定义形式：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">fun receiverType.functionName(params)&#123;</span><br><span class="line">    body</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>receiverType：表示函数的接收者，也就是函数扩展的对象<br>functionName：扩展函数的名称<br>params：扩展函数的参数，可以为NULL</p>
-<p>以下实例扩展 User 类 ：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">class User(var name:String)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**扩展函数**/</span></span><br><span class="line">fun User.Print()&#123;</span><br><span class="line">    print(<span class="string">"用户名 $name"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">(arg:Array&lt;String&gt;)</span></span>&#123;</span><br><span class="line">    var user = User(<span class="string">"Runoob"</span>)</span><br><span class="line">    user.Print()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="类的属性"><a href="#类的属性" class="headerlink" title="类的属性"></a>类的属性</h3><p>Kotlin 类的属性可以声明为可变的（var）或者是只读的（val），声明一个属性的完整语法如下：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">var &lt;propertyName&gt;[: &lt;PropertyType&gt;] [= &lt;property_initializer&gt;]</span><br><span class="line">    [&lt;getter&gt;]</span><br><span class="line">    [&lt;setter&gt;]</span><br><span class="line">val &lt;propertyName&gt;[: &lt;PropertyType&gt;] [= &lt;property_initializer&gt;]</span><br><span class="line">    [&lt;getter&gt;]</span><br></pre></td></tr></table></figure></p>
-<p>以一个简单的 Student 类为例：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">class Student(_name: String, _age: Int) &#123;</span><br><span class="line">    val name: String = _name</span><br><span class="line">    var age: Int = _age</span><br><span class="line">    val isAdult: Boolean</span><br><span class="line">        get() = <span class="keyword">this</span>.age &gt;= <span class="number">18</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里声明 name 和 age 时确实是有 getter 和 setter 方法的，只是被省略了而已，我们以为的不省略写法如下（错误的）：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">class Student(_name: String, _age: Int) &#123;</span><br><span class="line">    val name = _name <span class="comment">// Initializer is not allowed here because this property has no backing field</span></span><br><span class="line">        get() = <span class="keyword">this</span>.name <span class="comment">// Recursive call</span></span><br><span class="line">    var age = _age <span class="comment">// Initializer is not allowed here because this property has no backing field</span></span><br><span class="line">        get() = <span class="keyword">this</span>.age <span class="comment">// Recursive call</span></span><br><span class="line">        set(value) &#123;</span><br><span class="line">            <span class="keyword">this</span>.age = value <span class="comment">// Recursive call</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>this.name 会造成 Recursive call（递归调用）。我们看一下是怎么回事：</p>
-<ul>
-<li>第一步，调用 student.name；</li>
-<li>第二步，调用 get() 方法；</li>
-<li>第三步，在 get() 方法里，调用 this.name；</li>
-<li>第一步，调用 student.name；</li>
-<li>第二步，调用 get() 方法；</li>
-<li>…</li>
-</ul>
-<p>这样就形成了递归调用了 get() 方法，并且没有终止条件，所以是有问题的。</p>
-<p>另一条错误信息提示没有<code>backing field</code>，也叫幕后字段</p>
-<h4 id="backing-field"><a href="#backing-field" class="headerlink" title="backing field"></a>backing field</h4><p>Kotlin 类中不能直接声明 Fields。然而，当一个属性需要一个 backing field 时，Kotlin 会自动地提供它。在访问器中使用 field 标识符就可以引用到 backing field</p>
-<p>看下官方文档里的例子：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">var counter = <span class="number">0</span> <span class="comment">// Note: the initializer assigns the backing field directly</span></span><br><span class="line">    set(value) &#123;</span><br><span class="line">        <span class="keyword">if</span> (value &gt;= <span class="number">0</span>) field = value</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>改写一下刚才的Student类：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">class Student(_name: String, _age: Int) &#123;</span><br><span class="line">    val name = _name</span><br><span class="line">        get() = field <span class="comment">// redundant</span></span><br><span class="line">    var age = _age</span><br><span class="line">        get() = field <span class="comment">// redundant</span></span><br><span class="line">        set(value) &#123; <span class="comment">// redundant</span></span><br><span class="line">            field = value</span><br><span class="line">        &#125;</span><br><span class="line">    val isAdult: Boolean</span><br><span class="line">            get() = <span class="keyword">this</span>.age &gt;= <span class="number">18</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="Backing-Properties"><a href="#Backing-Properties" class="headerlink" title="Backing Properties"></a>Backing Properties</h4><p>如果上面的方案都不符合你的需求，那么可以试试“后端属性”(backing property)的方法，它实际上也是隐含试的对属性值的初始化声明，避免了空指针。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">class Student(_name: String, _age: Int) &#123;</span><br><span class="line">    val name = _name</span><br><span class="line">    var age = _age</span><br><span class="line">    <span class="keyword">private</span> var _grades: Map&lt;String, Int&gt;? = <span class="keyword">null</span> <span class="comment">// 私有属性，后端属性</span></span><br><span class="line">    val grades: Map&lt;String, Int&gt;</span><br><span class="line">        get() &#123;</span><br><span class="line">            <span class="keyword">if</span> (_grades == <span class="keyword">null</span>) &#123; <span class="comment">// 只有在首次访问时才加载成绩信息，并只执行一次</span></span><br><span class="line">                _grades = loadGrades()</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> _grades!!</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> fun <span class="title">loadGrades</span><span class="params">()</span>: MutableMap&lt;String, Int&gt; </span>&#123;</span><br><span class="line">        println(<span class="string">"loadGrades() called"</span>)</span><br><span class="line">        val result = mutableMapOf&lt;String, Int&gt;()</span><br><span class="line">        result.put(<span class="string">"Chinese"</span>, <span class="number">100</span>)</span><br><span class="line">        result.put(<span class="string">"Math"</span>, <span class="number">99</span>)</span><br><span class="line">        result.put(<span class="string">"English"</span>, <span class="number">100</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="主构造函数"><a href="#主构造函数" class="headerlink" title="主构造函数"></a>主构造函数</h3><p>在Kotlin类中只有一个主构造函数(主构造器)，而辅助构造函数（次级构造器）可以是一个或者多个。<br>主构造函数用于初始化类，它在类标题中声明。标准写法：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名 <span class="title">construction</span>(参数1，参数2….)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当constructor关键字没有注解和可见性修饰符作用于它时，constructor关键字可以省略</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> val name:String</span><br><span class="line">    <span class="keyword">private</span> val age:Int</span><br><span class="line">    constructor(name:String,age:Int)&#123; <span class="comment">// 次级构造函数</span></span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">        <span class="keyword">this</span>.age = age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="数据类"><a href="#数据类" class="headerlink" title="数据类"></a>数据类</h4><p>Kotlin 可以创建一个只包含数据的类，关键字为 data：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">data class <span class="title">User</span><span class="params">(val name: String, val age: Int)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>编译器会自动的从主构造函数中根据所有声明的属性提取以下函数：</p>
-<ul>
-<li>equals() / hashCode()</li>
-<li>toString() 格式如 “User(name=John, age=42)”</li>
-<li>componentN() functions 对应于属性，按声明顺序排列</li>
-<li>copy() 函数</li>
-</ul>
-<p>为了保证生成代码的一致性以及有意义，数据类需要满足以下条件：</p>
-<ul>
-<li>主构造函数至少包含一个参数</li>
-<li>所有的主构造函数的参数必须标识为val 或者 var</li>
-<li>数据类不可以声明为 abstract, open, sealed 或者 inner</li>
-<li>数据类不能继承其他类 (但是可以实现接口)</li>
-</ul>
-<p><strong>复制</strong><br>复制使用 copy() 函数，我们可以使用该函数复制对象并修改部分属性, 对于上文的 User 类，其实现会类似下面这样：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">fun <span class="title">copy</span><span class="params">(name: String = <span class="keyword">this</span>.name, age: Int = <span class="keyword">this</span>.age)</span> </span>= User(name, age)</span><br></pre></td></tr></table></figure></p>
-<p>实例<br>使用 copy 类复制 User 数据类，并修改 age 属性:<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">data class <span class="title">User</span><span class="params">(val name: String, val age: Int)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">(args: Array&lt;String&gt;)</span> </span>&#123;</span><br><span class="line">    val jack = User(name = <span class="string">"Jack"</span>, age = <span class="number">1</span>)</span><br><span class="line">    val olderJack = jack.copy(age = <span class="number">2</span>)</span><br><span class="line">    println(jack)</span><br><span class="line">    println(olderJack)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果为：</span></span><br><span class="line"><span class="comment">// User(name=Jack, age=1)</span></span><br><span class="line"><span class="comment">// User(name=Jack, age=2)</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="密封类"><a href="#密封类" class="headerlink" title="密封类"></a>密封类</h4><p>密封类用来表示受限的类继承结构：当一个值为有限几种的类型, 而不能有任何其他类型时。在某种意义上，他们是枚举类的扩展：枚举类型的值集合 也是受限的，但每个枚举常量只存在一个实例，而密封类 的一个子类可以有可包含状态的多个实例。</p>
-<p>声明一个密封类，使用 sealed 修饰类，密封类可以有子类，但是所有的子类都必须要内嵌在密封类中。</p>
-<p>sealed 不能修饰 interface ,abstract class(会报 warning,但是不会出现编译错误)</p>
-<p>密封类就是一种专门用来配合 when 语句使用的类，举个例子，假如在 Android 中我们有一个 view，我们现在想通过 when 语句设置针对 view 进行两种操作：显示和隐藏，那么就可以这样做：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">sealed <span class="class"><span class="keyword">class</span> <span class="title">UiOp</span> </span>&#123;</span><br><span class="line">    object Show: UiOp()</span><br><span class="line">    object Hide: UiOp()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">execute</span><span class="params">(view: View, op: UiOp)</span> </span>= when (op) &#123;</span><br><span class="line">    UiOp.Show -&gt; view.visibility = View.VISIBLE</span><br><span class="line">    UiOp.Hide -&gt; view.visibility = View.GONE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上功能其实完全可以用枚举实现，但是如果我们现在想加两个操作：水平平移和纵向平移，并且还要携带一些数据，比如平移了多少距离，平移过程的动画类型等数据，用枚举显然就不太好办了，这时密封类的优势就可以发挥了，例如：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">sealed <span class="class"><span class="keyword">class</span> <span class="title">UiOp</span> </span>&#123;</span><br><span class="line">    object Show: UiOp()</span><br><span class="line">    object Hide: UiOp()</span><br><span class="line">    class TranslateX(val px: Float): UiOp()</span><br><span class="line">    class TranslateY(val px: Float): UiOp()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">execute</span><span class="params">(view: View, op: UiOp)</span> </span>= when (op) &#123;</span><br><span class="line">    UiOp.Show -&gt; view.visibility = View.VISIBLE</span><br><span class="line">    UiOp.Hide -&gt; view.visibility = View.GONE</span><br><span class="line">    is UiOp.TranslateX -&gt; view.translationX = op.px <span class="comment">// 这个 when 语句分支不仅告诉 view 要水平移动，还告诉 view 需要移动多少距离，这是枚举等 Java 传统思想不容易实现的</span></span><br><span class="line">    is UiOp.TranslateY -&gt; view.translationY = op.px</span><br><span class="line">    <span class="comment">// 不再需要 `else` 子句，因为我们已经覆盖了所有的情况</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上代码中，TranslateX 是一个类，它可以携带多于一个的信息，比如除了告诉 view 需要水平平移之外，还可以告诉 view 平移多少像素，甚至还可以告诉 view 平移的动画类型等信息，我想这大概就是密封类出现的意义吧。</p>
-<p>除此之外，如果 when 语句的分支不需要携带除“显示或隐藏view之外的其它信息”时（即只需要表明 when 语句分支，不需要携带额外数据时），用 object 关键字创建单例就可以了，并且此时 when 子句不需要使用 is 关键字。只有需要携带额外信息时才定义密封类的子类，而且使用了密封类就不需要使用 else 子句，每当我们多增加一个密封类的子类或单例，编译器就会在 when 语句中给出提示，可以在编译阶段就及时发现错误，这也是以往 switch-case 语句和枚举不具备的功能。</p>
-<p>最后，我们甚至可以把这一组操作封装成一个函数，以便日后调用，如下：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 先封装一个UI操作列表</span></span><br><span class="line">class Ui(val uiOps: List = emptyList()) &#123;</span><br><span class="line">    <span class="function">operator fun <span class="title">plus</span><span class="params">(uiOp: UiOp)</span> </span>= Ui(uiOps + uiOp)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一组操作</span></span><br><span class="line">val ui = Ui() +</span><br><span class="line">        UiOp.Show +</span><br><span class="line">        UiOp.TranslateX(<span class="number">20f</span>) +</span><br><span class="line">        UiOp.TranslateY(<span class="number">40f</span>) +</span><br><span class="line">        UiOp.Hide</span><br><span class="line"><span class="comment">// 定义调用的函数</span></span><br><span class="line"><span class="function">fun <span class="title">run</span><span class="params">(view: View, ui: Ui)</span> </span>&#123;</span><br><span class="line">    ui.uiOps.forEach &#123; execute(view, it) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run(view, ui) <span class="comment">// 最终调用</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="object-关键字"><a href="#object-关键字" class="headerlink" title="object 关键字"></a>object 关键字</h3><p><code>object</code> 是Kotlin中的一个重要的关键字，也是Java中没有的。<code>object</code> 主要有以下三种使用场景：</p>
-<ul>
-<li>对象声明（Object Declaration），前面提到了，用于创建类的单例</li>
-<li>伴生对象（Companion Object），类似java中 static 关键字</li>
-<li>对象表达式（Object Expression），替换java的匿名内部类</li>
-</ul>
-<h3 id="分离用于只读与可变集合的接口"><a href="#分离用于只读与可变集合的接口" class="headerlink" title="分离用于只读与可变集合的接口"></a>分离用于只读与可变集合的接口</h3><h3 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h3><p>参考 <a href="https://juejin.im/post/6844904038589267982" target="_blank" rel="noopener">一文彻底搞懂 Kotlin 中的委托</a></p>
-<h3 id="协程（coroutines）"><a href="#协程（coroutines）" class="headerlink" title="协程（coroutines）"></a>协程（coroutines）</h3><p>参考谷歌官方文档：<a href="https://developer.android.com/kotlin/coroutines?hl=zh-cn" target="_blank" rel="noopener">Android 上的 Kotlin 协程</a></p>
-<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><p>Kotlin内联函数:  <a href="https://juejin.im/entry/6844903879751008270" target="_blank" rel="noopener">https://juejin.im/entry/6844903879751008270</a><br>使用 Kotlin 进行 Android 开发 :  <a href="https://www.kotlincn.net/docs/reference/android-overview.html" target="_blank" rel="noopener">https://www.kotlincn.net/docs/reference/android-overview.html</a></p>
-<p>Kotlin 的 Backing Fields 和 Backing Properties ： <a href="https://blog.csdn.net/willway_wang/article/details/100184784" target="_blank" rel="noopener">https://blog.csdn.net/willway_wang/article/details/100184784</a></p>
-<hr>
-<div style="width:690.45px"><div style="display:inline-block;width:110px"><a rel="noopener" href="http://creativecommons.org/licenses/by/2.5/cn/" target="_blank"><img style="border-width:0" src="http://blog.conorlee.top/blogimages/attribution_88x31.png"></a></div><div style="display:inline-block;width:580px;"><br>    本文采用<a rel="noopener" href="http://creativecommons.org/licenses/by/2.5/cn/" target="_blank">知识共享署名 2.5 中国大陆许可协议</a>进行许可，欢迎转载，但转载请注明来自<a href="http://conorlee.top/" target="_blank" rel="noopener">Agehua’s Blog</a>，并保持转载后文章内容的完整。本人保留所有版权相关权利。</div></div>
-
-<p>本文链接：<a href="http://agehua.github.io/2020/10/26/Diffrence-between-kotlin&amp;Java/">http://agehua.github.io/2020/10/26/Diffrence-between-kotlin&amp;Java/</a></p>
-
-
-            
-  <!-- donate css -->
-  <style type="text/css">
-      .center {
-          text-align: center;
-      }
-      .hidden {
-          display: none;
-      }
-         
-    .donate_bar a.btn_donate{
-      display: inline-block;
-      width: 82px;
-      height: 82px;
-      background: url("http://cdn.conorlee.top/btn_reward.gif") no-repeat;
-      _background: url("http://cdn.conorlee.top/btn_reward.gif") no-repeat;
-      -webkit-transition: background 0s;
-      -moz-transition: background 0s;
-      -o-transition: background 0s;
-      -ms-transition: background 0s;
-      transition: background 0s;
-
-    }
-
-    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
-    .donate_bar .donate_txt {
-      display: block;
-      color: #9d9d9d;
-      font: 14px/2 "Microsoft Yahei";
-    }
-    .bold{ font-weight: bold; }
-  </style>
-  <!-- /css -->
-
-<!-- Donate Module -->
-<div id="donate_module">
-
-  <!-- btn_donate & tips -->
-  <div id="donate_board" class="donate_bar center">
-      <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>
-  </div>
-  <!-- /btn_donate & tips -->
-
-  <!-- donate guide -->
-
-  <div id="donate_guide" class="donate_bar center hidden" >
-        <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-      <div class="donate_wechat" style="background:#9d9d9d;display:inline;margin:auto; " >
-        <a href="http://cdn.conorlee.top/weixin_charge.png" title="用微信扫一扫哦~" class="fancybox" rel="article0">
-          <img src="http://cdn.conorlee.top/weixin_charge.png" title="微信打赏 Colin" height="auto" width="50%"
-          style="float:left;"/>
-        </a>
-        <a href="http://cdn.conorlee.top/zhifubao_charge.png" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
-          <img src="http://cdn.conorlee.top/zhifubao_charge.png" title="支付宝打赏 Colin" height="auto" width="50%"
-          style="float:left;"/>
-        </a>
-      </div>
-      <div style="display:inline-block;">
-          &nbsp;
-          <span class="donate_txt">
-              Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-          </span>
-      </div>
-
-  </div>
-  <!-- /donate guide -->
-
-  <!-- donate script -->
-  <script type="text/javascript">
-    document.getElementById('btn_donate').onclick = function() {
-      $('#donate_board').addClass('hidden');
-      $('#donate_guide').removeClass('hidden');
-    }
-
-    function donate_on_web(){
-      $('#donate').submit();
-        }
-
-    var original_window_onload = window.onload;
-        window.onload = function () {
-            if (original_window_onload) {
-                original_window_onload();
-            }
-            document.getElementById('donate_board_wdg').className='hidden';
-    }
-  </script>
-  <!-- /donate script -->
-</div>
-<!-- /Donate Module -->
-
-            
+            <p><p>本文整理了一些 Kotlin 与 Java 语言的区别，方便从Java转型学习Kotlin的同学。</p>
+<h3 id="Kotlin-解决了一些-Java-中的问题"><a href="#Kotlin-解决了一些-Java-中的问题" class="headerlink" title="Kotlin 解决了一些 Java 中的问题"></a>Kotlin 解决了一些 Java 中的问题</h3><p>Kotlin 通过以下措施修复了 Java 中一系列长期困扰我们的问题：<br></p>
+            <p class="article-more-link">
+                <a href="/2020/10/26/Diffrence-between-kotlin&Java/#more">Read More</a>
+            </p>
         
         </div>
 
@@ -890,7 +561,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2020/10/26/Diffrence-between-kotlin&Java/" data-id="ckgufoboh0086r9vduz0f76v6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2020/10/26/Diffrence-between-kotlin&Java/" data-id="ckguj3vxz006e2hvdep6xrc8c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1048,7 +719,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2020/09/07/Kotlin-DSL/" data-id="ckgufobon008er9vdt1uy8dpd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2020/09/07/Kotlin-DSL/" data-id="ckguj3vxv006b2hvdooq6t009" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1205,7 +876,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2020/08/31/JVM-stack-and_heap/" data-id="ckgufobol008br9vdu05tvzf6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2020/08/31/JVM-stack-and_heap/" data-id="ckguj3vxs00682hvdhmapbt4s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1361,7 +1032,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2020/07/10/profile_analysis/" data-id="ckgufobo50084r9vdrglxkply" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2020/07/10/profile_analysis/" data-id="ckguj3vxp00612hvdrea04yti" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1522,7 +1193,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2020/05/26/download-function-analysis/" data-id="ckgufobnz007yr9vdjmesdyqk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2020/05/26/download-function-analysis/" data-id="ckguj3vxr00642hvd6ct95yps" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1679,7 +1350,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/12/09/Android-Measure/" data-id="ckgufobnw007vr9vddjwzkvdf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/12/09/Android-Measure/" data-id="ckguj3vxn005y2hvdz5dyqp1t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1840,7 +1511,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/12/08/Android-bits-operation/" data-id="ckgufobns007sr9vdip3jea49" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/12/08/Android-bits-operation/" data-id="ckguj3vxl005v2hvd1wkl8log" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1996,7 +1667,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 
 </div>
 
-    <a data-url="http://agehua.github.io/2019/09/12/Horizontal-Coordinator/" data-id="ckgufobnq007pr9vdbptz1w1j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://agehua.github.io/2019/09/12/Horizontal-Coordinator/" data-id="ckguj3vxj005t2hvdr7f6rqxi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
